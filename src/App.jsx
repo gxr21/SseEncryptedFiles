@@ -1,20 +1,16 @@
-// =================================
-// ===== SSE ENCRYPTED FILES =======
-// =================================
- 
-import { BrowserRouter , Router , Route } from 'react-router-dom'
-import './index.css'
-// import {useState} from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./index.css";
+
 function App() {
   return (
-  <>
-       <BrowserRouter>
-       <Router>
-        <Route path = "/" element ={<h1>Hello , World !</h1>}/>
-       </Router>
-       </BrowserRouter>
-  </>
-  )
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<h1 className="">Hello, World!</h1>} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;
