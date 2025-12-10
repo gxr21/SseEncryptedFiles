@@ -1,103 +1,289 @@
-.main{
-    background-color: #051C2D;
-    height: 600px;
-    width:100%;
-    display: flex;
-    justify-content: center;
+/* ============================== */
+/*       GLOBAL ENCRYPTION BG     */
+/* ============================== */
+
+.encryption-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background: linear-gradient(135deg, #0a1929 0%, #051C2D 50%, #0d2438 100%);
+  overflow: hidden;
+
+  /* أهم نقطة حتى تكون الخلفية وراء كل شيء */
+  z-index: -10;
+  pointer-events: none;
 }
-.sec{
-  height: 400px;
-  width: 550px;
+
+/* شبكة خلفية ثابتة */
+.encryption-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(32, 201, 151, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(32, 201, 151, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.4;
+}
+
+/* توهج أخضر */
+.encryption-bg::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(32, 201, 151, 0.15), transparent 65%);
+  top: 20%;
+  left: 70%;
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: gentlePulse 8s ease-in-out infinite;
+}
+
+/* نقاط متحركة */
+.encryption-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(32, 201, 151, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(32, 201, 151, 0.8);
+  animation: floatParticle 15s ease-in-out infinite;
+}
+
+.particle:nth-child(1) { top: 15%; left: 20%; animation-delay: 0s; animation-duration: 12s; }
+.particle:nth-child(2) { top: 65%; left: 80%; animation-delay: 2s; animation-duration: 14s; }
+.particle:nth-child(3) { top: 40%; left: 10%; animation-delay: 4s; animation-duration: 16s; }
+.particle:nth-child(4) { top: 80%; left: 50%; animation-delay: 1s; animation-duration: 13s; }
+.particle:nth-child(5) { top: 25%; left: 90%; animation-delay: 3s; animation-duration: 15s; }
+
+/* أكواد ثنائية */
+.binary-float {
+  position: absolute;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: rgba(32, 201, 151, 0.15);
+  white-space: nowrap;
+  animation: floatBinary 20s linear infinite;
+}
+
+.binary-float:nth-child(1) { top: 10%; left: -10%; animation-delay: 0s; }
+.binary-float:nth-child(2) { top: 50%; left: -15%; animation-delay: 5s; }
+.binary-float:nth-child(3) { top: 80%; left: -20%; animation-delay: 10s; }
+
+/* خط المسح */
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(32, 201, 151, 0.4) 50%, transparent);
+  animation: scanMove 6s ease-in-out infinite;
+}
+
+/* توهجات الزوايا */
+.corner-glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.1;
+}
+
+.corner-glow.top-left {
+  top: -100px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(32, 201, 151, 0.3), transparent);
+}
+
+.corner-glow.bottom-right {
+  bottom: -100px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(32, 201, 151, 0.25), transparent);
+}
+
+/* ===================== */
+/*       ANIMATIONS      */
+/* ===================== */
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); opacity: 0.15; }
+  50% { transform: scale(1.1); opacity: 0.25; }
+}
+
+@keyframes floatParticle {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-30px); opacity: 0.8; }
+}
+
+@keyframes floatBinary {
+  0% { transform: translateX(0); opacity: 0; }
+  10%, 90% { opacity: 0.15; }
+  100% { transform: translateX(120vw); opacity: 0; }
+}
+
+@keyframes scanMove {
+  0%, 100% { transform: translateY(-100vh); opacity: 0; }
+  10%, 90% { opacity: 0.5; }
+  100% { transform: translateY(100vh); }
+}
+
+/* تحسين الموبايل */
+@media (max-width: 768px) {
+  .binary-float,
+  .particle {
+    display: none;
+  }
+}
+
+/* === Main Container === */
+.signup-container {
+  /* background : url('../../assets/binary.svg'); */
+  background-color: #051C2D;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* === Card Box === */
+.signup-card {
+  height: 580px;
+  width: 900px;
   background-color: rgba(8, 47, 77, 1);
   position: absolute;
-  top: 120px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 30px;
-  
-  
- 
-}
-.child{
-    background-color: azure;
-    height: 396px;
-    width: 60%;
-    position: absolute;
-    bottom: 2px;
-    left: 235px;
-    border-radius: 25px;
-    
-    
-}
-.inside{
-    background-color: azure;
-    position: absolute;
-    bottom: 30px;
-    margin: 10px;
-    left: 17px;
-    height: 320px;
-    width: 283px;
-    box-shadow: 0px 0px 5px;
-    border-radius: 20px;
-}
-.h1{
-    text-align: right;
-    font-size: 30px;
-    position: relative;
-    right:16px;
-    font-weight: bold;
-}
-p{
-    text-align: right;
-    font-size: 20px;
-    margin-right: 13px;
-    
-    padding-top: 10px;
-}
-input{
-    position: relative;
-    top: -20px;
-    left: 28px;
-    margin-bottom: 1px;
-    border-radius: 5px;
-    background-color:rgba(48, 48, 48, 0.08);
-    box-shadow: 0px 0px 2px ;
-    width: 85%; 
-    height: 30px;
-}
-.signup{
-    height: 35px;
-    width: 70%;
-    background-color:rgb(3, 32, 54) ;
-    color: white;
-    border-radius: 8px;
-    position: absolute;
-    bottom: 15px;
-    left: 50px;
+  display: flex;
 }
 
-.h2{
-    font-weight: bold;
-    font-size: 20px;
-    color: azure;
-    position: relative;
-    bottom: -130px;
-    left: 5px;
+/* === Left Side (Message + New Account Button) === */
+.signup-side {
+  flex: 1;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.signup-side-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: azure;
+  margin-bottom: 10px;
+  text-align: right;
+}
+.signup-side-subtitle {
+  color: azure;
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: right;
+}
+.signup-side-button {
+  height: 45px;
+  width: 300px;
+  background-color: azure;
+  color: #051C2D;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+.signup-side-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
 
+/* === Form Section === */
+.signup-form-wrapper {
+  background-color: azure;
+  height: 100%;
+  width: 55%;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
 }
-.p{
-    text-align: left;
-    color: azure;
-    font-size: 13px;
-    position: relative;
-    bottom: -130px;
-    left: 60px;
+
+.signup-form {
+  background-color: azure;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.signin{
-    height: 30px;
-    width: 200px;
-    position: absolute;
-    left: 17px;
-    bottom: 41%;
-    background-color: azure;
-    color: #051C2D;
-    border-radius: 5px;
+
+.signup-title {
+  text-align: right;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #051C2D;
+}
+
+.signup-label {
+  text-align: right;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.signup-input {
+  width: 100%;
+  height: 45px;
+  border-radius: 8px;
+  background-color: rgba(48, 48, 48, 0.08);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  padding-right: 15px;
+  border: 1px solid rgba(0,0,0,0.1);
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.signup-input:focus {
+  outline: none;
+  border-color: #051C2D;
+  box-shadow: 0px 2px 8px rgba(5, 28, 45, 0.2);
+}
+
+.signup-button {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(3, 32, 54);
+  color: white;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: rgb(5, 45, 75);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
