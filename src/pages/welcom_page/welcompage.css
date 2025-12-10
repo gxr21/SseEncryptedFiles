@@ -1,298 +1,156 @@
-.binary-bg {
+/* ============================== */
+/*       GLOBAL ENCRYPTION BG     */
+/* ============================== */
+
+.encryption-bg {
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
-  height: 100%;
-  z-index: 0;
-  background: #051C2D;
+  height: 100vh;
+
+  background: linear-gradient(135deg, #0a1929 0%, #051C2D 50%, #0d2438 100%);
   overflow: hidden;
-  
-  /* طبقات متعددة من الخطوط */
-  background-image: 
-    /* خطوط أفقية رفيعة */
-    repeating-linear-gradient(
-      0deg,
-      rgba(32, 201, 151, 0.15) 0px,
-      rgba(32, 201, 151, 0.15) 1px,
-      transparent 1px,
-      transparent 20px
-    ),
-    /* خطوط عمودية */
-    repeating-linear-gradient(
-      90deg,
-      rgba(32, 201, 151, 0.08) 0px,
-      rgba(32, 201, 151, 0.08) 1px,
-      transparent 1px,
-      transparent 30px
-    ),
-    /* خطوط قطرية */
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      transparent 40px,
-      rgba(32, 201, 151, 0.05) 40px,
-      rgba(32, 201, 151, 0.05) 41px
-    ),
-    /* خطوط قطرية معاكسة */
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0px,
-      transparent 40px,
-      rgba(32, 201, 151, 0.05) 40px,
-      rgba(32, 201, 151, 0.05) 41px
-    ),
-    /* تدرج خلفي للعمق */
-    radial-gradient(
-      circle at 30% 40%,
-      rgba(32, 201, 151, 0.12) 0%,
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 70% 60%,
-      rgba(10, 47, 69, 0.8) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(5, 28, 45, 1) 0%,
-      rgba(5, 28, 45, 0.95) 100%
-    );
-  
-  background-size: 
-    100% 100%,
-    100% 100%,
-    80px 80px,
-    80px 80px,
-    600px 600px,
-    800px 800px,
-    100% 100%;
-  
-  background-position: 
-    0 0,
-    0 0,
-    0 0,
-    0 0,
-    0% 0%,
-    100% 100%,
-    center;
-  
-  /* تحريك الخطوط */
-  animation: gridSlide 20s linear infinite;
-  
-  /* ظلال داخلية متوهجة */
-  box-shadow: 
-    inset 0 0 150px rgba(32, 201, 151, 0.08),
-    inset 0 0 300px rgba(5, 28, 45, 0.9),
-    inset 200px 100px 200px rgba(32, 201, 151, 0.04),
-    inset -150px -100px 250px rgba(10, 47, 69, 0.6);
-}
 
-@keyframes gridSlide {
-  0% {
-    background-position: 
-      0 0,
-      0 0,
-      0 0,
-      0 0,
-      0% 0%,
-      100% 100%,
-      center;
-  }
-  100% {
-    background-position: 
-      0 20px,
-      30px 0,
-      80px 80px,
-      -80px 80px,
-      100% 100%,
-      0% 0%,
-      center;
-  }
-}
-
-/* طبقة الأكواد الثنائية المتساقطة */
-.binary-bg::before {
-  content: "01001010 11010101 00110011 10101010 01010101 11110000 00001111 10101010 01100110 11001100 10011001 00110011 11000011 00111100 01010101 10101010 11010101 01001010 00110011 10101010 01010101 11110000 10101010 01100110 11001100 10011001 11000011 00111100";
-  position: absolute;
-  top: -100%;
-  left: -10%;
-  width: 120%;
-  height: 200%;
-  font-size: 14px;
-  font-family: 'Courier New', monospace;
-  font-weight: bold;
-  color: rgba(32, 201, 151, 0.3);
-  line-height: 2.5;
-  word-spacing: 25px;
-  letter-spacing: 3px;
-  white-space: pre-wrap;
-  text-shadow: 
-    0 0 8px rgba(32, 201, 151, 0.6),
-    0 0 15px rgba(32, 201, 151, 0.3),
-    0 0 25px rgba(32, 201, 151, 0.2);
-  animation: 
-    binaryFall 15s linear infinite,
-    binaryGlow 3s ease-in-out infinite;
+  /* أهم نقطة حتى تكون الخلفية وراء كل شيء */
+  z-index: -10;
   pointer-events: none;
 }
 
-@keyframes binaryFall {
-  0% { 
-    top: -100%; 
-    opacity: 0;
-  }
-  5% {
-    opacity: 0.8;
-  }
-  95% {
-    opacity: 0.8;
-  }
-  100% { 
-    top: 100%; 
-    opacity: 0;
-  }
-}
-
-@keyframes binaryGlow {
-  0%, 100% {
-    text-shadow: 
-      0 0 8px rgba(32, 201, 151, 0.6),
-      0 0 15px rgba(32, 201, 151, 0.3),
-      0 0 25px rgba(32, 201, 151, 0.2);
-  }
-  50% {
-    text-shadow: 
-      0 0 12px rgba(32, 201, 151, 0.9),
-      0 0 20px rgba(32, 201, 151, 0.5),
-      0 0 35px rgba(32, 201, 151, 0.3);
-  }
-}
-
-/* طبقة ثانية من الأكواد بسرعة مختلفة */
-.binary-bg::after {
-  content: "10101010 01010101 11001100 00110011 11110000 00001111 10011001 01100110 11000011 00111100 01001010 11010101 10101010 01010101 00110011 11001100 11110000 10101010 01100110 10011001 00111100 11000011";
+/* شبكة خلفية ثابتة */
+.encryption-bg::before {
+  content: "";
   position: absolute;
-  top: -150%;
-  right: -5%;
-  width: 110%;
-  height: 250%;
-  font-size: 18px;
-  font-family: 'Courier New', monospace;
-  font-weight: bold;
-  color: rgba(32, 201, 151, 0.2);
-  line-height: 3;
-  word-spacing: 30px;
-  letter-spacing: 4px;
-  white-space: pre-wrap;
-  text-shadow: 
-    0 0 10px rgba(32, 201, 151, 0.5),
-    0 0 20px rgba(32, 201, 151, 0.2);
-  animation: binaryFall2 20s linear infinite;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(32, 201, 151, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(32, 201, 151, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.4;
+}
+
+/* توهج أخضر */
+.encryption-bg::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(32, 201, 151, 0.15), transparent 65%);
+  top: 20%;
+  left: 70%;
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: gentlePulse 8s ease-in-out infinite;
+}
+
+/* نقاط متحركة */
+.encryption-particles {
+  position: absolute;
+  inset: 0;
   pointer-events: none;
-  transform: rotate(-5deg);
 }
 
-@keyframes binaryFall2 {
-  0% { 
-    top: -150%; 
-    opacity: 0;
-  }
-  8% {
-    opacity: 0.6;
-  }
-  92% {
-    opacity: 0.6;
-  }
-  100% { 
-    top: 120%; 
-    opacity: 0;
-  }
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(32, 201, 151, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(32, 201, 151, 0.8);
+  animation: floatParticle 15s ease-in-out infinite;
 }
 
-/* تأثير وميض للخلفية بالكامل */
-.binary-bg {
-  animation: 
-    gridSlide 20s linear infinite,
-    subtleFlicker 5s ease-in-out infinite;
+.particle:nth-child(1) { top: 15%; left: 20%; animation-delay: 0s; animation-duration: 12s; }
+.particle:nth-child(2) { top: 65%; left: 80%; animation-delay: 2s; animation-duration: 14s; }
+.particle:nth-child(3) { top: 40%; left: 10%; animation-delay: 4s; animation-duration: 16s; }
+.particle:nth-child(4) { top: 80%; left: 50%; animation-delay: 1s; animation-duration: 13s; }
+.particle:nth-child(5) { top: 25%; left: 90%; animation-delay: 3s; animation-duration: 15s; }
+
+/* أكواد ثنائية */
+.binary-float {
+  position: absolute;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: rgba(32, 201, 151, 0.15);
+  white-space: nowrap;
+  animation: floatBinary 20s linear infinite;
 }
 
-@keyframes subtleFlicker {
-  0%, 100% {
-    filter: brightness(1) contrast(1);
+.binary-float:nth-child(1) { top: 10%; left: -10%; animation-delay: 0s; }
+.binary-float:nth-child(2) { top: 50%; left: -15%; animation-delay: 5s; }
+.binary-float:nth-child(3) { top: 80%; left: -20%; animation-delay: 10s; }
+
+/* خط المسح */
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(32, 201, 151, 0.4) 50%, transparent);
+  animation: scanMove 6s ease-in-out infinite;
+}
+
+/* توهجات الزوايا */
+.corner-glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.1;
+}
+
+.corner-glow.top-left {
+  top: -100px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(32, 201, 151, 0.3), transparent);
+}
+
+.corner-glow.bottom-right {
+  bottom: -100px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(32, 201, 151, 0.25), transparent);
+}
+
+/* ===================== */
+/*       ANIMATIONS      */
+/* ===================== */
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); opacity: 0.15; }
+  50% { transform: scale(1.1); opacity: 0.25; }
+}
+
+@keyframes floatParticle {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-30px); opacity: 0.8; }
+}
+
+@keyframes floatBinary {
+  0% { transform: translateX(0); opacity: 0; }
+  10%, 90% { opacity: 0.15; }
+  100% { transform: translateX(120vw); opacity: 0; }
+}
+
+@keyframes scanMove {
+  0%, 100% { transform: translateY(-100vh); opacity: 0; }
+  10%, 90% { opacity: 0.5; }
+  100% { transform: translateY(100vh); }
+}
+
+/* تحسين الموبايل */
+@media (max-width: 768px) {
+  .binary-float,
+  .particle {
+    display: none;
   }
-  50% {
-    filter: brightness(1.05) contrast(1.1);
-  }
-}
-
-/* نقاط متوهجة عشوائية */
-.binary-bg {
-  background-image: 
-    /* النقاط المتوهجة */
-    radial-gradient(circle at 15% 20%, rgba(32, 201, 151, 0.4) 0%, transparent 2px),
-    radial-gradient(circle at 85% 30%, rgba(32, 201, 151, 0.3) 0%, transparent 2px),
-    radial-gradient(circle at 45% 60%, rgba(32, 201, 151, 0.5) 0%, transparent 1.5px),
-    radial-gradient(circle at 75% 80%, rgba(32, 201, 151, 0.3) 0%, transparent 2px),
-    radial-gradient(circle at 25% 75%, rgba(32, 201, 151, 0.4) 0%, transparent 1.5px),
-    radial-gradient(circle at 60% 15%, rgba(32, 201, 151, 0.3) 0%, transparent 2px),
-    /* الخطوط الأساسية */
-    repeating-linear-gradient(
-      0deg,
-      rgba(32, 201, 151, 0.15) 0px,
-      rgba(32, 201, 151, 0.15) 1px,
-      transparent 1px,
-      transparent 20px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(32, 201, 151, 0.08) 0px,
-      rgba(32, 201, 151, 0.08) 1px,
-      transparent 1px,
-      transparent 30px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      transparent 40px,
-      rgba(32, 201, 151, 0.05) 40px,
-      rgba(32, 201, 151, 0.05) 41px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0px,
-      transparent 40px,
-      rgba(32, 201, 151, 0.05) 40px,
-      rgba(32, 201, 151, 0.05) 41px
-    ),
-    radial-gradient(
-      circle at 30% 40%,
-      rgba(32, 201, 151, 0.12) 0%,
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 70% 60%,
-      rgba(10, 47, 69, 0.8) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(5, 28, 45, 1) 0%,
-      rgba(5, 28, 45, 0.95) 100%
-    );
-}
-
-/* حد متوهج للخلفية */
-.binary-bg {
-  border: 1px solid rgba(32, 201, 151, 0.2);
-  outline: 1px solid rgba(32, 201, 151, 0.1);
-  outline-offset: -5px;
 }
 
 /* تأكد من أن المحتوى فوق الخلفية */
 .Landingpage {
+  /* background: url('src/assets/binary.svg'); */
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
 }
 .Landingpage{
    font-family: 'Tajawal';

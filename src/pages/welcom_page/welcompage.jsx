@@ -5,16 +5,45 @@ import './welcompage.css'
 function WelcomePage(){
 return (
         <>
-        {/* 
+        {/*
+        ============================
+        هذن القيم الي استخدمناهن 
+        بالمشروع خصوصا الخلفية
+        ============================
+        Bais Color :
+        - text-[#20C997]
+        =================
         Bais Baccground :
          - bg-[#051C2D]
+        =================
+        Bais Color :
+        - text-[#20C997]
+        ================= 
+        Bais Baccground :
+         - bg-[#051C2D]
+        ================
 
         */}
 
         {/* === Background Here ! === */}
 
-        {/* <div className="binary-bg "></div> */}
-            <div className="Landingpage  bg-[#051C2D]  min-h-screen w-full overflow-hidden" >
+        <div className="encryption-bg">
+        <div className="encryption-particles">
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        </div>
+
+        <div className="binary-float">0101010011010101010</div>
+        <div className="binary-float">1010010110100101100</div>
+        <div className="binary-float">0011010101101010101</div>
+        <div className="scan-line"></div>
+        <div className="corner-glow top-left"></div>
+        <div className="corner-glow bottom-right"></div>
+        </div>
+            <div className="Landingpage min-h-screen w-full overflow-hidden" >
                 <Navbar />
 
                 {/* HERO SECTION = FULL SCREEN */}
