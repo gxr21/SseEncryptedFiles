@@ -1,0 +1,118 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1929;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#051C2D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a2332;stop-opacity:1" />
+    </linearGradient>
+    
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(0,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+    
+    <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,255,255,0.02)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background gradient -->
+  <rect width="1920" height="1080" fill="url(#bgGradient)"/>
+  
+  <!-- Grid patterns -->
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+  <rect width="1920" height="1080" fill="url(#smallGrid)"/>
+  
+  <!-- Binary code streams -->
+  <text x="100" y="50" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.15)" style="letter-spacing: 5px;">
+    01001000 01100101 01101100 01101100 01101111 00100000 01010111 01101111 01110010 01101100 01100100
+  </text>
+  <text x="150" y="150" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.1)" style="letter-spacing: 5px;">
+    01000101 01101110 01100011 01110010 01111001 01110000 01110100 01101001 01101111 01101110
+  </text>
+  <text x="200" y="250" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.08)" style="letter-spacing: 5px;">
+    01010011 01100101 01100011 01110101 01110010 01101001 01110100 01111001 00100000 01001011 01100101 01111001
+  </text>
+  <text x="100" y="350" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.12)" style="letter-spacing: 5px;">
+    01000100 01100001 01110100 01100001 00100000 01010000 01110010 01101111 01110100 01100101 01100011 01110100
+  </text>
+  <text x="250" y="450" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.09)" style="letter-spacing: 5px;">
+    01000011 01101001 01110000 01101000 01100101 01110010 00100000 01000001 01001100 01000111
+  </text>
+  <text x="150" y="550" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.11)" style="letter-spacing: 5px;">
+    01010000 01110010 01101001 01110110 01100001 01100011 01111001 00100000 01001101 01101111 01100100 01100101
+  </text>
+  <text x="300" y="650" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.07)" style="letter-spacing: 5px;">
+    01000001 01000101 01010011 00100000 00110010 00110101 00110110 00100000 01000010 01101001 01110100
+  </text>
+  <text x="200" y="750" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.13)" style="letter-spacing: 5px;">
+    01010011 01001000 01000001 00100000 01001000 01100001 01110011 01101000 00100000 01000110 01110101 01101110
+  </text>
+  <text x="100" y="850" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.1)" style="letter-spacing: 5px;">
+    01000010 01101100 01101111 01100011 01101011 01100011 01101000 01100001 01101001 01101110
+  </text>
+  <text x="350" y="950" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.08)" style="letter-spacing: 5px;">
+    01010011 01010011 01001100 00100000 01010100 01001100 01010011 00100000 01010000 01110010 01101111 01110100
+  </text>
+  
+  <!-- Right side binary -->
+  <text x="1400" y="100" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.12)" style="letter-spacing: 5px;">
+    11001100 11010101 10110011 11100010 10101110 11110001
+  </text>
+  <text x="1350" y="200" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.09)" style="letter-spacing: 5px;">
+    10011100 10110101 11010011 10100110 11001110 10111001
+  </text>
+  <text x="1450" y="300" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.11)" style="letter-spacing: 5px;">
+    11101100 10010101 11110011 10100010 11101110 11010001
+  </text>
+  <text x="1300" y="400" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.08)" style="letter-spacing: 5px;">
+    10101100 11110101 10010011 11100110 10001110 11011001
+  </text>
+  <text x="1400" y="500" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.13)" style="letter-spacing: 5px;">
+    11001100 10010101 11010011 10110010 11101110 10111001
+  </text>
+  <text x="1350" y="700" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.1)" style="letter-spacing: 5px;">
+    10111100 11010101 10110011 11000110 10101110 11110001
+  </text>
+  <text x="1450" y="900" font-family="monospace" font-size="12" fill="rgba(0,255,255,0.07)" style="letter-spacing: 5px;">
+    11101100 10110101 11110011 10100010 11001110 10011001
+  </text>
+  
+  <!-- Hex codes in center -->
+  <text x="960" y="400" font-family="monospace" font-size="16" fill="rgba(0,255,255,0.15)" text-anchor="middle">
+    0x48656C6C6F 0x576F726C64 0x456E637279
+  </text>
+  <text x="960" y="450" font-family="monospace" font-size="16" fill="rgba(0,255,255,0.12)" text-anchor="middle">
+    0x7074696F6E 0x53656375 0x72697479
+  </text>
+  <text x="960" y="500" font-family="monospace" font-size="16" fill="rgba(0,255,255,0.1)" text-anchor="middle">
+    0x4B6579 0x50726F74 0x656374696F6E
+  </text>
+  <text x="960" y="550" font-family="monospace" font-size="16" fill="rgba(0,255,255,0.13)" text-anchor="middle">
+    0x44617461 0x50726976 0x616379
+  </text>
+  <text x="960" y="650" font-family="monospace" font-size="16" fill="rgba(0,255,255,0.09)" text-anchor="middle">
+    0x43697068 0x657220 0x414553323536
+  </text>
+  
+  <!-- Lock icons -->
+  <text x="200" y="200" font-size="40" fill="rgba(0,255,255,0.08)">🔒</text>
+  <text x="1600" y="800" font-size="40" fill="rgba(0,255,255,0.08)">🔐</text>
+  <text x="1700" y="300" font-size="40" fill="rgba(0,255,255,0.08)">🔑</text>
+  <text x="300" y="900" font-size="40" fill="rgba(0,255,255,0.08)">🛡️</text>
+  <text x="1500" y="150" font-size="40" fill="rgba(0,255,255,0.08)">🔒</text>
+  <text x="400" y="600" font-size="35" fill="rgba(0,255,255,0.06)">🔐</text>
+  
+  <!-- Glowing circles -->
+  <circle cx="100" cy="100" r="3" fill="rgba(0,255,255,0.3)">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1800" cy="200" r="3" fill="rgba(0,255,255,0.3)">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="500" cy="1000" r="3" fill="rgba(0,255,255,0.3)">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1600" cy="900" r="3" fill="rgba(0,255,255,0.3)">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
