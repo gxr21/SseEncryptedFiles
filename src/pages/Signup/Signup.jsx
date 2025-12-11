@@ -27,7 +27,10 @@ function Signup() {
         <div className="signup-side">
           <h1 className="signup-side-title">ليس لديك حساب ؟</h1>
           <p className="signup-side-subtitle">قم بإنشاء حساب الآن</p>
+          <a href="/signin">
           <button className="signup-side-button">إنشاء حساب</button>
+          </a>
+          
         </div>
         <div className="signup-form-wrapper">
           <div className="signup-form">
