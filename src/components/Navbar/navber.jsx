@@ -12,15 +12,20 @@ function Navbar(){
           <div className="navbar flex px-6 py-2">
             {/* === Buttons === */}
             <div className=" flex  " dir="rtl">
+              
               <Button
                text = 'تسجيل الدخول'
                color = '#20C997'
+               link={<a href="/signin"></a>}
               />
+    
               <Button
                text = 'انشاء حساب'
                color = '#FFFFFF'
                textColor="#20C997"
+               link={<a href="/signup"></a>}
               />
+              
             </div>
             {/* === Links === */}
            

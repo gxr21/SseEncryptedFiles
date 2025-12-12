@@ -1,5 +1,5 @@
 import "./Signup.css";
-function Signup() {
+function Signin() {
   return (
     <>
     {/* === Background Here ! === */}
@@ -21,25 +21,32 @@ function Signup() {
         <div className="corner-glow top-left"></div>
         <div className="corner-glow bottom-right"></div>
         </div> */}
-
-      <div className="signup-container">
-      <div className="signup-card">
-        <div className="signup-side">
-          <h1 className="signup-side-title">ليس لديك حساب ؟</h1>
-          <p className="signup-side-subtitle">قم بإنشاء حساب الآن</p>
-          <a href="/signin">
-          <button className="signup-side-button">إنشاء حساب</button>
+        
+  {/* ====== هنا اريد الصفحة form يعني حتى المعلمات تنتقل للباك وتتعالج ======== */}
+      <div className="signin-container">
+      <div className="signin-card">
+        <div className="signin-side">
+          <h1 className="signup-side-title">لديك حساب من قبل ؟</h1>
+          <p className="signup-side-subtitle">قم بتسجيل الدخول</p>
+          <a href="/signup">
+          <button className="signup-side-button"> تسجيل الدخول</button>
           </a>
-          
         </div>
-        <div className="signup-form-wrapper">
-          <div className="signup-form">
-            <h1 className="signup-title">تسجيل الدخول</h1>
-            <label className="signup-label">البريد الإلكتروني</label>
-            <input type="email" className="signup-input" dir="rtl"/>
-            <label className="signup-label">كلمة المرور</label>
-            <input type="password" className="signup-input" dir="rtl" />
-            <button className="signup-button">تسجيل الدخول</button>
+        <div className="signin-form-wrapper">
+          <div className="signin-form">
+            <h1 className="signin-title">انشاء حساب</h1>
+            {/* ==== اريد رسالة تظهر فوك الادخال انو اذا المستخدم كتب اسمة بالعربي ممنوع الاسم فقط بالانكليزي ==== */}
+            <label className="signin-label1">الأسم بالكامل</label>
+            <input type="text" className="signin-input1" dir="rtl"/>
+            <label className="signin-label1"> أسم المستخدم</label>
+            <input type="text" className="signin-input1" dir="rtl"/>
+            <label className="signin-label1">البريد الإلكتروني</label>
+            <input type="email" className="signin-input2" dir="rtl"/>  
+            <label className="signin-label2">كلمة المرور</label>
+            <input type="password" className="signin-input3" dir="rtl" />
+            <label className="signin-label3">تأكيد كلمة المرور</label>
+             <input type="password" className="signin-input4" dir="rtl" />
+            <button className="signin-button">انشاء حساب </button>
           </div>
         </div>
       </div>
@@ -49,4 +56,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Signin;
