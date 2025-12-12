@@ -1,4 +1,3 @@
-
 import "./Signin.css";
 function Signin() {
   return (
@@ -22,7 +21,8 @@ function Signin() {
         <div className="corner-glow top-left"></div>
         <div className="corner-glow bottom-right"></div>
         </div> */}
-
+        
+  {/* ====== هنا اريد الصفحة form يعني حتى المعلمات تنتقل للباك وتتعالج ======== */}
       <div className="signin-container">
       <div className="signin-card">
         <div className="signin-side">
@@ -31,23 +31,19 @@ function Signin() {
           <a href="/signup">
           <button className="signup-side-button"> تسجيل الدخول</button>
           </a>
-          
-          
-          
-          
-          
-          
-          
         </div>
         <div className="signin-form-wrapper">
           <div className="signin-form">
             <h1 className="signin-title">انشاء حساب</h1>
+            {/* ==== اريد رسالة تظهر فوك الادخال انو اذا المستخدم كتب اسمة بالعربي ممنوع الاسم فقط بالانكليزي ==== */}
+            <label className="signin-label1">الأسم بالكامل</label>
+            <input type="text" className="signin-input1" dir="rtl"/>
             <label className="signin-label1">البريد الإلكتروني</label>
-            <input type="email" className="signin-input1" dir="rtl"/>
+            <input type="email" className="signin-input2" dir="rtl"/>  
             <label className="signin-label2">كلمة المرور</label>
-            <input type="password" className="signin-input2" dir="rtl" />
+            <input type="password" className="signin-input3" dir="rtl" />
             <label className="signin-label3">تأكيد كلمة المرور</label>
-             <input type="password" className="signin-input3" dir="rtl" />
+             <input type="password" className="signin-input4" dir="rtl" />
             <button className="signin-button">انشاء حساب </button>
           </div>
         </div>
