@@ -16,14 +16,13 @@ function Navbar(){
               <Button
                text = 'تسجيل الدخول'
                color = '#20C997'
-               link={<a href="/signin"></a>}
+               link= '/signin'
               />
-    
               <Button
                text = 'انشاء حساب'
                color = '#FFFFFF'
                textColor="#20C997"
-               link={<a href="/signup"></a>}
+               link= '/signup'
               />
               
             </div>

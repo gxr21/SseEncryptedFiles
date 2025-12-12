@@ -28,7 +28,7 @@ function Signin() {
         <div className="signin-side">
           <h1 className="signup-side-title">لديك حساب من قبل ؟</h1>
           <p className="signup-side-subtitle">قم بتسجيل الدخول</p>
-          <a href="/signup">
+          <a href="/signin">
           <button className="signup-side-button"> تسجيل الدخول</button>
           </a>
         </div>
