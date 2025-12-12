@@ -1,0 +1,12 @@
+#search{
+    background-color: azure;
+    height: 30px;
+    width: 420px;
+    border-radius: 25px;
+    text-align: right;
+    padding-right: 30px;
+    position: absolute;
+    top: 15px;
+    left: 32%;
+
+}

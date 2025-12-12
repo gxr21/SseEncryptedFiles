@@ -1,0 +1,7 @@
+body{
+    background: #051C2D;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}

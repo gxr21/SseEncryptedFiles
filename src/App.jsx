@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WelcomePage from "./pages/welcom_page/welcompage.jsx";
 import Signin from "./pages/Signin/SIgnin.jsx";
 import Signup from "./pages/Signup/Signup.jsx";
-
+import Dashboard from "./pages/Dashboard/dashboard.jsx";
 import "./index.css";
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Route path="/signup" element={<Signup/>} />
         {/* === Protected Routes === */}
 
-        {/* <Route path='/dashboard' element={<Dashboard/>} /> */}
+        <Route path='/dashboard' element={<Dashboard/>} /> 
       </Routes>
     </BrowserRouter>
   );
