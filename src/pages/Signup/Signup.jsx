@@ -1,5 +1,9 @@
 import "./Signup.css";
 function Signin() {
+  // const [formData, setFormData] = useState({
+  //   email: "",
+  //   password: "",
+  // });
   return (
     <>
     {/* === Background Here ! === */}
