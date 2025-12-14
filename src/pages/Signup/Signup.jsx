@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import "./Signup.css";
-
+import { Link } from "react-router-dom";
 function Signup() {
 
   const [fullName, setFullName] = useState("");
@@ -41,11 +41,11 @@ function Signup() {
             <div className="signin-side">
               <h1 className="signin-side-title">لديك حساب من قبل ؟</h1>
               <p className="signin-side-subtitle">قم بتسجيل الدخول</p>
-              <a href="/signin">
+              <Link to={"/signin"}>
                 <button type="button" className="signin-side-button">
                   تسجيل الدخول
                 </button>
-              </a>
+              </Link>
             </div>
 
             <div className="signup-form-wrapper">

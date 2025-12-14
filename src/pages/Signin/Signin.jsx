@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import "./Signin.css";
+import { Link } from "react-router-dom";
 function Signin() {
    const [email,setEmail] = useState("")
    const [password,setPassword]=useState("")
@@ -29,9 +30,9 @@ function Signin() {
         <div className="signup-side">
           <h1 className="signup-side-title">ليس لديك حساب ؟</h1>
           <p className="signup-side-subtitle">قم بإنشاء حساب الآن</p>
-          <a href="/signin">
+          <Link to="/signup">
           <button className="signup-side-button">إنشاء حساب</button>
-          </a>
+          </Link>
         </div>
         <div className="signin-form-wrapper">
           <div className="signin-form">
