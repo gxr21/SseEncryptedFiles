@@ -1,6 +1,6 @@
 import axios from "axios";
-import "./Signup.css";
 import { useState } from "react";
+import "./Signup.css";
 
 function Signup() {
 
@@ -14,36 +14,27 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-     // منع اسم المستخدم بالعربي
     if (/[\u0600-\u06FF]/.test(username)) {
       setError("اسم المستخدم يجب أن يكون باللغة الإنجليزية فقط");
       return;
     }
-    //تأكيد كلمة المرور
     if (password !== confirmPassword) {
       setError("كلمتا المرور غير متطابقتين");
       return;
     }
-    const data = {  fullName,username,email,password};
-   try {
-    //ارسال البيانات بعد التحقق
-    const response = await axios.post(
-      "http://localhost:5000/signup",data);
-
-    console.log("الرد من السيرفر:", response.data);
-
-  } catch (error) {
-    console.error("خطأ:", error.response?.data || error.message);
-  }
-    
+    const data = { fullName, username, email, password };
+    try {
+      const response = await axios.post("http://localhost:5000/signup", data);
+      console.log("الرد من السيرفر:", response.data);
+    } catch (error) {
+      console.error("خطأ:", error.response?.data || error.message);
+    }
     console.log("البيانات المرسلة:", data);
-    
   };
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-
         <div className="signup-container">
           <div className="signup-card">
 
@@ -118,7 +109,6 @@ function Signup() {
 
           </div>
         </div>
-
       </form>
     </>
   );

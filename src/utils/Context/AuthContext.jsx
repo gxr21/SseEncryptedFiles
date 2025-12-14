@@ -1,7 +1,12 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 const AuthContext = createContext();
+
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(() => {
+    // التحقق من وجود المستخدم في localStorage عند تحميل التطبيق
+    const savedUser = localStorage.getItem("user");
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
 
   // تسجيل الدخول
   const login = (userData) => {
@@ -22,7 +27,4 @@ export function AuthProvider({ children }) {
   );
 }
 
-// هنا تسوي useAuth
-export function useAuth() {
-  return useContext(AuthContext);
-}
+export { AuthContext };
