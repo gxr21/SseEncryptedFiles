@@ -147,8 +147,7 @@
 }
 
 /* === Main Container === */
-.signup-container {
-  /* background : url('../../assets/binary.svg'); */
+.signin-container {
   background-color: #051C2D;
   height: 100vh;
   width: 100%;
@@ -157,7 +156,7 @@
 }
 
 /* === Card Box === */
-.signup-card {
+.signin-card {
   height: 580px;
   width: 900px;
   background-color: rgba(8, 47, 77, 1);
@@ -203,13 +202,13 @@
   border: none;
   transition: all 0.3s ease;
 }
-.signup-side-button:hover {
+.signin-side-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* === Form Section === */
-.signup-form-wrapper {
+.signin-form-wrapper {
   background-color: azure;
   height: 100%;
   width: 55%;
@@ -220,7 +219,7 @@
   padding: 30px;
 }
 
-.signup-form {
+.signin-form {
   background-color: azure;
   height: 100%;
   width: 100%;
@@ -232,7 +231,7 @@
   justify-content: center;
 }
 
-.signup-title {
+.signin-title {
   text-align: right;
   position: relative;
   top: -20px;
@@ -242,7 +241,7 @@
   color: #051C2D;
 }
 
-.signup-label {
+.signin-label {
   text-align: right;
   font-size: 16px;
   display: block;
@@ -251,7 +250,7 @@
   color: #333;
 }
 
-.signup-input {
+.signin-input {
   width: 100%;
   height: 40px;
   border-radius: 8px;
@@ -264,13 +263,13 @@
   transition: all 0.3s ease;
 }
 
-.signup-input:focus {
+.signin-input:focus {
   outline: none;
   border-color: #051C2D;
   box-shadow: 0px 2px 8px rgba(5, 28, 45, 0.2);
 }
 
-.signup-button {
+.signin-button {
   width: 100%;
   height: 50px;
   background-color: rgb(3, 32, 54);
@@ -284,7 +283,7 @@
   transition: all 0.3s ease;
 }
 
-.signup-button:hover {
+.signin-button:hover {
   background-color: rgb(5, 45, 75);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
