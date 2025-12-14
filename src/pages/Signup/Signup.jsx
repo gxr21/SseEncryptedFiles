@@ -14,15 +14,21 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    if (/[\u0600-\u06FF]/.test(username)) {
-      setError("اسم المستخدم يجب أن يكون باللغة الإنجليزية فقط");
+    // const FormatData = {
+    //    fullName: 'AliJalal',
+    //    username: 'gxr21',
+    //    email: 'gxr21@gmail.com',
+    //    password: '123456789'
+    //  }
+    if (/[\u0600-\u06FF]/.test(fullName)) {
+      setError("اسم الكامل يجب أن يكون باللغة الإنجليزية فقط");
       return;
     }
     if (password !== confirmPassword) {
       setError("كلمتا المرور غير متطابقتين");
       return;
     }
-    const data = { fullName, username, email, password };
+    const data = {fullName, username, email, password};
     try {
       const response = await axios.post("http://localhost:5000/signup", data);
       console.log("الرد من السيرفر:", response.data);
