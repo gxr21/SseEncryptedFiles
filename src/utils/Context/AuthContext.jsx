@@ -1,28 +1,53 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 const AuthContext = createContext();
-
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(() => {
-    // التحقق من وجود المستخدم في localStorage عند تحميل التطبيق
-    const savedUser = localStorage.getItem("user");
-    return savedUser ? JSON.parse(savedUser) : null;
-  });
+  // 1. إضافة حالة التحميل (تكون true في البداية)
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(null);
 
-  // تسجيل الدخول
+  useEffect(() => {
+    // هذا الكود يشتغل أول ما الموقع يفتح
+    checkUserLoggedIn();
+  }, []);
+
+  const checkUserLoggedIn = () => {
+    try {
+      const savedUser = localStorage.getItem("user");
+      
+      if (savedUser && savedUser !== "undefined") {
+        setUser(JSON.parse(savedUser));
+      } else {
+        setUser(null);
+      }
+    } catch (error) {
+      console.error("Error loading user", error);
+      setUser(null);
+    } finally {
+      setLoading(false);
+    }
+  };
   const login = (userData) => {
     setUser(userData);
     localStorage.setItem("user", JSON.stringify(userData));
+    localStorage.setItem("token", userData.token);
   };
 
-  // تسجيل الخروج
   const logout = () => {
     setUser(null);
     localStorage.removeItem("user");
+    localStorage.removeItem("token");
   };
-
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
-      {children}
+    // ✅ نمرر loading لباقي التطبيق
+    <AuthContext.Provider value={{ user, login, logout, loading }}>
+      {/* إذا كان لا يزال يحمل، لا تعرض شيئاً (أو اعرض شاشة تحميل) */}
+      {loading ? (
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
+          <h2>جاري التحميل...</h2>
+        </div>
+      ) : (
+        children
+      )}
     </AuthContext.Provider>
   );
 }

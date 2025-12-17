@@ -1,23 +1,38 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../utils/Context/useAuth";
 import "./Signin.css";
 import { Link } from "react-router-dom";
 function Signin() {
    const [email,setEmail] = useState("")
    const [password,setPassword]=useState("")
-   
+   const [loading,setLoading] = useState(false)
+   const navigate = useNavigate();
+   const {login} = useAuth();
+
   const HandleSubmit = async (e) => {
   e.preventDefault();
+  setLoading(true);
   const data = {email,password};
-
   try {
     const response = await axios.post(
-      "http://localhost:5000/signin",data);
-
-    console.log("الرد من السيرفر:", response.data);
+      "http://localhost:5500/api/v1/auth/login",data);
+      if (response.status === 200 || response.status === 201) {
+        // localStorage.setItem("token", response.data.token);
+        // localStorage.setItem("user", JSON.stringify(response.data.user));
+        login(response.data)
+        alert("تم تسجيل الدخول بنجاح");
+        navigate("/dashboard");
+      }
 
   } catch (error) {
-    console.error("خطأ:", error.response?.data || error.message);
+    alert(error.response?.data?.message || "حدث خطأ غير متوقع");
+    setLoading(false);
+    console.log("Error", error);
+  }
+  finally {
+    setLoading(false);
   }
 };
   
@@ -43,6 +58,8 @@ function Signin() {
             dir="rtl"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
+            placeholder="example@gmail.com"
             />
             <label className="signin-label">كلمة المرور</label>
             <input type="password" 
@@ -50,8 +67,12 @@ function Signin() {
             dir="rtl" 
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
+            placeholder="***************"
             />
-            <button className="signin-button" type="submit">تسجيل الدخول</button>
+            <button className="signin-button" type="submit" 
+            disabled={loading}
+            >{loading ? "جاري الدخول..." : "دخول"}</button>
           </div>
         </div>
       </div>
