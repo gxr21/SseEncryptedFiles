@@ -4,7 +4,7 @@ import "./dashboard.css";
 function Dashboard(){
     return (
     <>
-     <div className="dashboard bg-[#051C2D] h-screen ">
+     <div className="dashboard bg-[#051C2D] h-screen  ">
         <Searchbar/>    
          <List/>     
       </div>
