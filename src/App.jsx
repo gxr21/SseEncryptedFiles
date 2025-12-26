@@ -17,7 +17,7 @@ function App() {
         <Route path="/" element={<WelcomePage />} />
         <Route path="/signin" element={<Signin/>} />
         <Route path="/signup" element={<Signup/>} />
-        
+        <Route path='/dashboard' element={<Dashboard/>}/>
          {/* IF USER LOGIN  */}
 
          <Route path='/' element={
@@ -37,11 +37,7 @@ function App() {
         />
         {/* === Protected Routes === */}
         
-         <Route path='/dashboard' element={
-        <ProtectedRoute>
-          <Dashboard/>
-        </ProtectedRoute>}/>
-        <Route path='/dashboard' element={<Dashboard/>} /> 
+
         {/* <Route path='/dashboard' element={<Dashboard/>} /> */}
       </Routes>
     </BrowserRouter>

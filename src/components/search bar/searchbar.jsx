@@ -2,10 +2,14 @@ import "./searchbar.css";
 
 function Searchbar() {
     return(
-    <>
-      <input type="text" id="search"  placeholder="بحث"/>
+    <div className="searchbar">
+     
+      <input type="text" id="search"  placeholder="ابحث"/>
+       <img src="src\components\search bar\images.png" alt="photo " id="image" />
+    </div>
+      
+      
     
-    </>
     );
 
 }

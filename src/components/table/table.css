@@ -1,0 +1,53 @@
+.table-continer{
+    position: absolute;
+    top: 80px;
+    left: 150px;
+    max-height: 400px;
+    overflow-y: auto;
+    background-color:rgb(23, 42, 62);
+    border-radius: 10px;
+}
+.table{
+    border-radius: 20px;  
+    border-collapse: separate;
+    height: 500px;
+    width: 800px;
+}
+.thead{
+    color: white;
+    text-align: center;
+    background-color:rgb(29, 60, 90);
+}
+.tbody{
+    color: white;
+    text-align: center;
+    
+}
+.th{
+    border: white solid;
+    border-radius: 8px;
+    height: 40px;
+}
+.table-continer::-webkit-scrollbar{
+    width: 10px;
+}
+.table-continer::-webkit-scrollbar-track{
+    background-color: #051C2D;
+    border-radius: 10px;
+}
+.table-continer::-webkit-scrollbar-thumb{
+    background-color:aquamarine;
+    border-radius: 10px;
+    border: solid white;
+}
+.button{
+    height: 50px;
+    width: 150px;
+    color: azure;
+    background-color: rgb(3, 201, 135);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 28px;
+    left: 550px;
+}
+
