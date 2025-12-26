@@ -37,17 +37,16 @@ function App() {
         />
         {/* === Protected Routes === */}
         
-<<<<<<< HEAD
 
         {/* <Route path='/dashboard' element={<Dashboard/>} /> */}
-=======
+
          {/* <Route path='/dashboard' element={
         <ProtectedRoute>
           <Dashboard/>
         </ProtectedRoute>}/>
         <Route path='/dashboard' element={<Dashboard/>} />  */}
         <Route path='/dashboard' element={<Dashboard/>} />
->>>>>>> 78273d05d1e165d49874a05194b8d6c5d13e2813
+
       </Routes>
     </BrowserRouter>
   );
