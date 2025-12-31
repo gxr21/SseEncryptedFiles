@@ -1,3 +1,37 @@
+/* styles for list component */
+.list-container {
+  position: relative;
+  min-height: 100vh;
+}
 
+/* Custom scrollbar for list */
+.list-container::-webkit-scrollbar {
+  width: 6px;
+}
 
+.list-container::-webkit-scrollbar-track {
+  background: #0a2a42;
+}
 
+.list-container::-webkit-scrollbar-thumb {
+  background: #20C997;
+  border-radius: 3px;
+}
+
+.list-container::-webkit-scrollbar-thumb:hover {
+  background: #1ba67e;
+}
+
+/* Animation for active menu item */
+/* @keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(32, 201, 151, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(32, 201, 151, 0);
+  }
+}
+
+.bg-\\[\\#20C997\\] {
+  animation: pulse-glow 2s infinite;
+} */
