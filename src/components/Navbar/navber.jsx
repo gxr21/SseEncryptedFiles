@@ -9,7 +9,7 @@ function Navbar(){
 };
     return (
         <>
-          <div className="navbar flex px-6 py-2">
+          <div className="navbar flex px-6 py-2" dir='rtl'>
             {/* === Buttons === */}
             <div className=" flex  " dir="rtl">
               

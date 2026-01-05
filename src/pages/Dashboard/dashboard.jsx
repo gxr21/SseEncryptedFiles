@@ -3,10 +3,12 @@ import List from "../../components/List/list.jsx";
 import Table from "../../components/table/table.jsx";
 import Logo from "../../components/logo/logo.jsx";
 import "./dashboard.css";
+import Snowfall from "react-snowfall";
 
 function Dashboard() {
   return (
     <div className="dashboard bg-[#051C2D] min-h-screen overflow-hidden" >
+      {/* <Snowfall/> */}
       {/* Header Section */}
       <div className="header-section flex items-center justify-between p-6 border-b border-[#0a2a42]">
         <div className="logo-container">

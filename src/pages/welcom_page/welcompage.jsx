@@ -1,6 +1,7 @@
 import Navbar from "../../components/Navbar/navber.jsx"
 import Footer from "../../components/Footer/footer.jsx"
 import FeedBack from "../../components/Feedback/feedback.jsx"
+import Snowfall from "react-snowfall"
 import './welcompage.css'
 function WelcomePage(){
 return (
@@ -44,6 +45,7 @@ return (
         <div className="corner-glow bottom-right"></div>
         </div>
             <div className="Landingpage min-h-screen w-full overflow-hidden" >
+                <Snowfall/>
                 <Navbar />
 
                 {/* HERO SECTION = FULL SCREEN */}
