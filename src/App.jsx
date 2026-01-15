@@ -19,7 +19,7 @@ function App() {
         <Route path="/signin" element={<Signin/>} />
         <Route path="/signup" element={<Signup/>} />
         <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="folder" element={<Folder/>} />
+        <Route path="/folder" element={<Folder/>} />
          {/* IF USER LOGIN  */}
 
          <Route path='/' element={
