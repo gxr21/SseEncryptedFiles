@@ -3,9 +3,9 @@ import List from "../../components/List/list.jsx";
 import Table from "../../components/table/table.jsx";
 import Logo from "../../components/logo/logo.jsx";
 import "./dashboard.css";
-import Snowfall from "react-snowfall";
 import { data } from "autoprefixer";
-
+import Folder from "../Folders/folder.jsx";
+import { Link} from "react-router-dom";
 function Dashboard() {
   const dashboardColumns = [
     { key: "name", label: "اسم الملف" },
@@ -72,7 +72,7 @@ const dashboardData = [
           <List activeId={1} />
         </div>
 
-        <div className="flex-1 p-6">
+        <div className="flex-1 p-6 gap-4">
           <Table
             title="قائمة الملفات "
             subtitle="عرض وتتبع جميع الملفات المرفوعة في النظام"
@@ -84,7 +84,6 @@ const dashboardData = [
       تفاصيل الملف
       </button>
       </div>
-
     </div>
   );
 }

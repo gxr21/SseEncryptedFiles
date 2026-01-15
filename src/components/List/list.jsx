@@ -1,6 +1,11 @@
 import './list.css';
-
-function List({ activeId }) {
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+function List({ activeId , }) {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    navigate('/');
+  };
   return (
     <div className="list-container h-full flex flex-col bg-gradient-to-b from-[#0a2538] to-[#051C2D] ">
       {/* User Profile Section */}
@@ -27,49 +32,51 @@ function List({ activeId }) {
           <h3 className="text-gray-400 text-sm font-semibold mb-3 px-2">القائمة الرئيسية</h3>
           <ul className="space-y-3">
             {[
-              { id: 1, name: 'أستعراض الملفات', icon: '📁' },
-              { id: 2, name: 'أستعراض المجلدات', icon: '📂' },
-              { id: 3, name: 'المشاركة', icon: '🔗' },
-              { id: 4, name: 'استرجاع الملفات', icon: '↩️' },
-              { id: 5, name: 'رفع الملفات', icon: '⬆️' },
+              { id: 1, name: 'أستعراض الملفات', icon: '📁' , path: 'dashboard'},
+              { id: 2, name: 'أستعراض المجلدات', icon: '📂' , path: 'folder'},
+              { id: 3, name: 'المشاركة', icon: '🔗' , path: 'share'},
+              { id: 4, name: 'استرجاع الملفات', icon: '↩️', path: 'restore'},
+              { id: 5, name: 'رفع الملفات', icon: '⬆️' , path: 'upload'},
             ].map((item) => {
               const isActive = item.id === activeId;
-
               return (
                 <li key={item.id} className="group">
-                  <button 
-                    className={`
-                      w-full text-right px-4 py-3.5 rounded-xl
-                      flex items-center justify-between
-                      transition-all duration-300 transform
-                      hover:translate-x-[-4px]
-                      ${isActive
-                        ? 'bg-gradient-to-r from-[#20C997] to-[#1aa67e] text-white shadow-lg'
-                        : 'text-gray-300 hover:bg-[#1a3a5a] hover:text-white'
-                      }
-                    `}
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="text-xl">{item.icon}</span>
-                      <span className="font-medium">{item.name}</span>
-                    </div>
-                    <div className={`
-                      w-1.5 h-1.5 rounded-full transition-all duration-300
-                      ${isActive
-                        ? 'bg-white opacity-100'
-                        : 'bg-[#20C997] opacity-0 group-hover:opacity-100'
-                      }
-                    `}></div>
-                  </button>
-                </li>
+                <Link
+                to={`/${item.path}`}
+                className={`
+                  w-full text-right px-4 py-3.5 rounded-xl
+                  flex items-center justify-between
+                  transition-all duration-300 transform
+                  hover:translate-x-[-4px]
+                  ${isActive
+                    ? 'bg-gradient-to-r from-[#20C997] to-[#1aa67e] text-white shadow-lg'
+                    : 'text-gray-300 hover:bg-[#1a3a5a] hover:text-white'
+                  }
+                `}
+                >
+    <div className="flex items-center gap-3">
+      <span className="text-xl">{item.icon}</span>
+      <span className="font-medium">{item.name}</span>
+    </div>
+    <div
+      className={`
+        w-1.5 h-1.5 rounded-full transition-all duration-300
+        ${isActive
+          ? 'bg-white opacity-100'
+          : 'bg-[#20C997] opacity-0 group-hover:opacity-100'
+        }
+      `}
+       />
+      </Link>
+    </li>
               );
             })}
           </ul>
         </div>
-
         {/* Additional Options */}
         <div className="mt-6">
           <h3 className="text-gray-400 text-sm font-semibold mb-3 px-2">الإعدادات</h3>
+          <Link to="/settings" className="w-full text-right px-4 py-3">
           <ul className="space-y-2">
             <li>
               <button className="w-full text-right px-4 py-3 rounded-lg text-gray-300 hover:bg-[#1a3a5a] hover:text-white transition-all duration-300 flex items-center gap-3">
@@ -83,7 +90,7 @@ function List({ activeId }) {
                 <span>المساعدة</span>
               </button>
             </li>
-          </ul>
+          </ul></Link>      
         </div>
       </div>
 
@@ -111,7 +118,10 @@ function List({ activeId }) {
           border border-red-800/30
           hover:border-red-700/50
           group
-        ">
+        "
+
+        onClick={handleLogout}
+        >
           <span className="text-lg">🚪</span>
           <span>تسجيل الخروج</span>
           <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">←</span>
