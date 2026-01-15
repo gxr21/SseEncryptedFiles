@@ -1,10 +1,8 @@
 
-import './Red.css'; // Optional: for custom CSS
-
-const Red = ({ children, onClick, variant = 'primary', disabled = false }) => {
+function Btn({text,color,hover}) {
   return (
-    <button className="red" >RED</button>
+    <button className={`w-35 h-11 text-lg rounded-[10px] text-white ${color} ${hover}`}>{text}</button>
   );
 };
 
-export default Red;
+export default Btn;

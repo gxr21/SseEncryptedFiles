@@ -1,6 +1,6 @@
 import './list.css';
 
-function List() {
+function List({ activeId }) {
   return (
     <div className="list-container h-full flex flex-col bg-gradient-to-b from-[#0a2538] to-[#051C2D] ">
       {/* User Profile Section */}
@@ -27,43 +27,47 @@ function List() {
           <h3 className="text-gray-400 text-sm font-semibold mb-3 px-2">القائمة الرئيسية</h3>
           <ul className="space-y-3">
             {[
-              { id: 1, name: 'أستعراض الملفات', icon: '📁', active: true },
-              { id: 2, name: 'أستعراض المجلدات', icon: '📂', active: false },
-              { id: 3, name: 'المشاركة', icon: '🔗', active: false },
-              { id: 4, name: 'استرجاع الملفات', icon: '↩️', active: false },
-              { id: 5, name: 'رفع الملفات', icon: '⬆️', active: false },
-            ].map((item) => (
-              <li key={item.id} className="group">
-                <button 
-                  className={`
-                    w-full text-right px-4 py-3.5 rounded-xl
-                    flex items-center justify-between
-                    transition-all duration-300 transform
-                    hover:translate-x-[-4px]
-                    ${item.active 
-                      ? 'bg-gradient-to-r from-[#20C997] to-[#1aa67e] text-white shadow-lg' 
-                      : 'text-gray-300 hover:bg-[#1a3a5a] hover:text-white'
-                    }
-                  `}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-xl">{item.icon}</span>
-                    <span className="font-medium">{item.name}</span>
-                  </div>
-                  <div className={`
-                    w-1.5 h-1.5 rounded-full transition-all duration-300
-                    ${item.active 
-                      ? 'bg-white opacity-100' 
-                      : 'bg-[#20C997] opacity-0 group-hover:opacity-100'
-                    }
-                  `}></div>
-                </button>
-              </li>
-            ))}
+              { id: 1, name: 'أستعراض الملفات', icon: '📁' },
+              { id: 2, name: 'أستعراض المجلدات', icon: '📂' },
+              { id: 3, name: 'المشاركة', icon: '🔗' },
+              { id: 4, name: 'استرجاع الملفات', icon: '↩️' },
+              { id: 5, name: 'رفع الملفات', icon: '⬆️' },
+            ].map((item) => {
+              const isActive = item.id === activeId;
+
+              return (
+                <li key={item.id} className="group">
+                  <button 
+                    className={`
+                      w-full text-right px-4 py-3.5 rounded-xl
+                      flex items-center justify-between
+                      transition-all duration-300 transform
+                      hover:translate-x-[-4px]
+                      ${isActive
+                        ? 'bg-gradient-to-r from-[#20C997] to-[#1aa67e] text-white shadow-lg'
+                        : 'text-gray-300 hover:bg-[#1a3a5a] hover:text-white'
+                      }
+                    `}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-xl">{item.icon}</span>
+                      <span className="font-medium">{item.name}</span>
+                    </div>
+                    <div className={`
+                      w-1.5 h-1.5 rounded-full transition-all duration-300
+                      ${isActive
+                        ? 'bg-white opacity-100'
+                        : 'bg-[#20C997] opacity-0 group-hover:opacity-100'
+                      }
+                    `}></div>
+                  </button>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
-        {/* Additional Options (Optional) */}
+        {/* Additional Options */}
         <div className="mt-6">
           <h3 className="text-gray-400 text-sm font-semibold mb-3 px-2">الإعدادات</h3>
           <ul className="space-y-2">
@@ -83,9 +87,8 @@ function List() {
         </div>
       </div>
 
-      {/* Bottom Section - Storage & Logout */}
+      {/* Bottom Section */}
       <div className="bottom-section p-4 border-t border-[#1a3a5a] bg-[#0a2538]/50">
-        {/* Storage Info */}
         <div className="storage-info mb-4 p-3 bg-[#1a3a5a]/30 rounded-lg">
           <div className="flex justify-between items-center mb-2">
             <span className="text-sm text-gray-400">التخزين المستخدم</span>
@@ -95,7 +98,7 @@ function List() {
             <div className="h-full bg-gradient-to-r from-[#20C997] to-[#0ea5e9] w-2/3 rounded-full"></div>
           </div>
         </div>
-        {/* Logout Button */}
+
         <button className="
           w-full py-3.5 px-4
           text-red-300 font-medium

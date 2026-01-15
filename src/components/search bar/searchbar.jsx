@@ -1,15 +1,15 @@
 import "./searchbar.css";
 function Searchbar() {
   return (
-    <div className="searchbar relative w-full max-w-md">
+    <div className="searchbar relative w-full max-w-md ">
       <div className="relative">
         <input 
           type="text" 
           id="search" 
           placeholder="ابحث عن ملفات، مجلدات، أو مستخدمين..."
           className="
-            w-full
-            py-3 px-12
+            w-85
+            py-3 px-10
             bg-[#0a2a42]
             text-white
             placeholder-gray-400
