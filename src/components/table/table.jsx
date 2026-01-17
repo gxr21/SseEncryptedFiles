@@ -20,7 +20,7 @@ function Table({ title, columns, data ,subtitle}) {
             {/* رأس الجدول */}
             <thead className="bg-[#2a5a8a] ">
               <tr>
-                <th className="py-4 px-6 text-white rounded text-2xl">#</th>
+                <th className="py-4 px-6 text-white rounded text-2xl text-center">ت</th>
                 {columns.map(col => (
                   <th key={col.key} className="py-4 px-6 text-white  rounded text-2xl">
                     {col.label}

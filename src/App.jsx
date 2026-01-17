@@ -8,6 +8,7 @@ import Signup from "./pages/Signup/Signup.jsx";
 import ProtectedRoute from "./utils/ProtectedPage/protected.jsx";
 import Dashboard from "./pages/Dashboard/dashboard.jsx";
 import Folder from "./pages/Folders/folder.jsx";
+import Restore from "./pages/Restore/Restore.jsx";
 import PublicRoute from "./utils/ProtectedPage/public.jsx";
 import "./index.css";
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/signup" element={<Signup/>} />
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/folder" element={<Folder/>} />
+        <Route path="/restore" element={<Restore/>} />
          {/* IF USER LOGIN  */}
 
          <Route path='/' element={
