@@ -38,7 +38,7 @@ const dashboardData = [
 ];
 
     return(
-     <div className="Rcycle bg-[#051C2D] min-h-screen ">
+     <div className="Restore bg-[#051C2D] min-h-screen ">
         <div className="header-section flex items-center justify-between p-6 border-b border-[#0a2a42]">
 
         <div className="logo-container">
@@ -85,12 +85,12 @@ const dashboardData = [
   <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
     <div className="bg-[#0a2a42] p-6 rounded-xl text-center w-96 h-64 flex flex-col justify-between inset-shadow-sm shadow-white  ">
       
-      {/* النص */}
+      
       <p className="text-white text-2xl font-semibold relative top-5">
         هل تريد حذف الملف نهائيًا؟
       </p>
 
-      {/* الأزرار */}
+      
       <div className="flex justify-center gap-6">
         <button
           onClick={() => setOpenDelete(false)}
