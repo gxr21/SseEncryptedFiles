@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard/dashboard.jsx";
 import Folder from "./pages/Folders/folder.jsx";
 import Restore from "./pages/Restore/Restore.jsx";
 import Settings from "./pages/Settings/settings.jsx";
+import Upload from "./pages/Upload/upload.jsx";
 import PublicRoute from "./utils/ProtectedPage/public.jsx";
 import "./index.css";
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/folder" element={<Folder/>} />
         <Route path="/restore" element={<Restore/>} />
         <Route path="/settings" element={<Settings/>}/>
+        <Route path="/upload" element={<Upload/>}/>
          {/* IF USER LOGIN  */}
 
          <Route path='/' element={
