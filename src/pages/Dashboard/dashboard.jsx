@@ -3,9 +3,7 @@ import List from "../../components/List/list.jsx";
 import Table from "../../components/table/table.jsx";
 import Logo from "../../components/logo/logo.jsx";
 import "./dashboard.css";
-import { data } from "autoprefixer";
-import Folder from "../Folders/folder.jsx";
-import { Link} from "react-router-dom";
+
 function Dashboard() {
   const dashboardColumns = [
     { key: "name", label: "اسم الملف" },
