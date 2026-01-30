@@ -7,6 +7,9 @@ import Table from "../../components/table/table.jsx";
 import Logo from "../../components/logo/logo.jsx";
 import "./dashboard.css";
 
+// ✅ حافظنا على الرابط كما طلبت
+const API_USER_FILES = "http://localhost:3000/api/v1/files";
+
 function Dashboard() {
   const MOCK_DATA = [
     {
@@ -55,14 +58,29 @@ function Dashboard() {
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isOffline, setIsOffline] = useState(false);
+  const [token, setToken] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const fetchFiles = async () => {
-      try {
-        const token = localStorage.getItem("token");
+      const storedToken = localStorage.getItem("token");
 
-        const response = await axios.get("http://localhost:3000/file", {
-          headers: { Authorization: `Bearer ${token}` },
+      // 1️⃣ فحص التوكن: إذا غير موجود نتوقف
+      if (!storedToken) {
+        setError("يرجى تسجيل الدخول اولا لعرض ملفاتك");
+        setLoading(false);
+        return; // 🛑 توقف هنا
+      }
+
+      // 2️⃣ إذا موجود، نحفظه ونكمل (بدون استدعاء الدالة مرة أخرى)
+      setToken(storedToken);
+      
+      try {
+        setLoading(true); // نبدأ التحميل
+
+        // 3️⃣ طلب البيانات
+        const response = await axios.get(API_USER_FILES, {
+          headers: { Authorization: `Bearer ${storedToken}` },
         });
 
         const mappedData = response.data.map((file) => ({
@@ -78,6 +96,8 @@ function Dashboard() {
 
         setFiles(mappedData);
         setIsOffline(false);
+        setError(""); // تنظيف الأخطاء إن وجدت
+        
       } catch (err) {
         console.warn("⚠️ السيرفر غير متصل، تم تحميل البيانات الافتراضية");
         setFiles(MOCK_DATA);
@@ -105,6 +125,14 @@ function Dashboard() {
         </div>
 
         <div className="flex-1 p-6 gap-4 relative">
+          
+          {/* عرض رسالة الخطأ إذا لم يكن مسجلاً للدخول */}
+          {error && !isOffline && (
+             <div className="bg-red-900/50 border border-red-600 text-red-200 p-3 rounded-lg mb-4 text-center">
+               ⛔ {error}
+             </div>
+          )}
+
           {isOffline && (
             <div className="bg-yellow-900/50 border border-yellow-600 text-yellow-200 p-3 rounded-lg mb-4 text-center">
               ⚠️ تعذر الاتصال بالسيرفر – يتم عرض بيانات افتراضية

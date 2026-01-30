@@ -42,7 +42,7 @@ function Signup() {
     };
 
     try {
-      const response = await axios.post("http://localhost:5500/api/v1/auth/register", data);
+      const response = await axios.post("http://localhost:3000/api/v1/auth/register", data);
       if (response.status === 201 || response.status === 200) {
         alert('تم انشاء الحساب بنجاح');
         navigate("/signin");

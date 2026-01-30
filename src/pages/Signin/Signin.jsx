@@ -17,7 +17,7 @@ function Signin() {
   const data = {email,password};
   try {
     const response = await axios.post(
-      "http://localhost:5500/api/v1/auth/login",data);
+      "http://localhost:3000/api/v1/auth/login",data);
       if (response.status === 200 || response.status === 201) {
         // localStorage.setItem("token", response.data.token);
         // localStorage.setItem("user", JSON.stringify(response.data.user));
