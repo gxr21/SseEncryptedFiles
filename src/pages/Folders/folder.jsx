@@ -1,10 +1,18 @@
+import axios from "axios";
+import { useState } from "react";
+import { useEffect } from "react";
 import Logo from "../../components/logo/logo.jsx";
 import Searchbar from "../../components/search bar/searchbar.jsx";
 import Table from "../../components/table/table.jsx";
 import List from "../../components/List/list.jsx";
 import Btn from "../../components/Buttons/colors/Red.jsx";
+import { p } from "motion/react-client";
 
 function Folder() {
+  const [folders,setFolders] = useState([]);
+  const [loading,setLoading] = useState(true);
+  const [offline,setoffline] = useState(false);
+  
     const dashboardColumns = [
     {
   key: "name",
@@ -23,39 +31,44 @@ function Folder() {
 
   ];
 
-const dashboardData = [
-  {
-    name: "مستندات",
-    description:"570.3kb",
-    date: "14/12/2024",
+  const dashboardData = [
+    { name: "مستندات", description: "570.3kb", date: "14/12/2024" },
+    { name: "python", description: "170.3mb", date: "07/09/2024" },
+    { name: "ملفات اكسل", description: "80.3mb", date: "06/02/2025" },
+    { name: "بيانات الادارة", description: "70.34kb", date: "27/04/2025" },
+    { name: "قسم المحاسبة", description: "590.3kb", date: "06/09/2025" },
+  ];
+useEffect(() => {
+  const fetchFolders = async () => {
+    try {
+      const token = localStorage.getItem("token");
 
-  },
-  {
-    name: "python",
-    description:"170.3mb",
-    date: "7/9/2024",
+      // محاولة الاتصال بالسيرفر
+      const response = await axios.get("http://localhost:5173/folders", {
+        timeout: 5000, // لو ما رد خلال 5 ثواني
+        headers: { Authorization: `Bearer ${token}` },
+      });
 
-  },
-  {
-    name: "ملفات اكسل",
-    description:"80.3mb",
-    date: "6/2/2025",
+      // تحويل البيانات بالشكل المطلوب
+      const mappedData = response.data.map(folder => ({
+        name: folder.name,
+        description: folder.size,
+        date: new Date(folder.createdAt).toLocaleDateString("ar-EG"),
+      }));
 
-  },
-  {
-    name: "بيانات الادارة",
-    description:"70.34kb",
-    date: "27/4/2025",
-    
+      setFolders(mappedData); // لو نجح السيرفر
+      setoffline(false); // السيرفر شغال
+    } catch (error) {
+      console.warn("⚠️ السيرفر غير متصل، عرض بيانات افتراضية");
+      setFolders(dashboardData); // لو فشل السيرفر
+      setoffline(true);
+    } finally {
+      setLoading(false); // انتهى التحميل
+    }
+  };
 
-  },
-    {
-    name: "قسم المحاسبة",
-    description:"590.3kb",
-    date: "6/9/2025",
-
-  },
-];
+  fetchFolders();
+}, []);
 
     return(
         <div className="folder bg-[#051C2D] min-h-screen overflow-hidden ">
@@ -75,14 +88,28 @@ const dashboardData = [
         <div className="w-64 border-r border-[#0a2a42]">
           <List activeId={2} />
         </div>
+        {offline && (
+          <div className="bg-yellow-900/50 border border-yellow-600 text-yellow-200 p-3 rounded-lg mb-4 text-center">
+            ⚠️ يتم عرض بيانات افتراضية لأن السيرفر غير متصل
+          </div>
+        )}
 
+      {loading ?(
+        <p className="text-white text-right mt-10 ">
+          جاري التحميل...
+         
+        </p>
+
+      ) : (
         <div className="flex-1 p-6">
           <Table
             title="قائمة المجلدات "
             subtitle="عرض وتتبع جميع المجلدات المرفوعة في النظام"
             columns={dashboardColumns}
-            data={dashboardData}
+            data={folders}
           />
+        </div>
+      )}
          <div className="relative min-h-[400px]"> {/* الحاوية */}
               <div className="absolute bottom-147 left-180 flex gap-4">
                 <Btn
@@ -104,8 +131,8 @@ const dashboardData = [
      
     </div>
         
-    </div>
     
+  
     
     );
 }
