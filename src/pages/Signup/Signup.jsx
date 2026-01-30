@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 import { Link } from "react-router-dom";
+const API_AUTH_REGISTER = "http://localhost:3000/api/v1/auth/register";
 
 function Signup() {
   const [fullName, setFullName] = useState("");
@@ -42,15 +43,17 @@ function Signup() {
     };
 
     try {
-      const response = await axios.post("http://localhost:3000/api/v1/auth/register", data);
+      const response = await axios.post(API_AUTH_REGISTER, data);
       if (response.status === 201 || response.status === 200) {
         alert('تم انشاء الحساب بنجاح');
         navigate("/signin");
       }
     } catch (error) {
+      console.log("🔥🔥 سبب الخطأ من السيرفر:")
       const msg = error.response?.data?.message || "حدث خطأ غير متوقع";
       setError(msg);
       setLoading(false);
+      alert(JSON.stringify(error.response?.data))
       console.log('Error', error);
     } finally {
       setLoading(false);

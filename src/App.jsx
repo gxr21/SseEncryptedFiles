@@ -7,7 +7,7 @@ import Signin from "./pages/Signin/Signin.jsx";
 import Signup from "./pages/Signup/Signup.jsx";
 import ProtectedRoute from "./utils/ProtectedPage/protected.jsx";
 import Dashboard from "./pages/Dashboard/dashboard.jsx";
-import Folder from "./pages/Folders/folder.jsx";
+// import Folder from "./pages/Folders/folder.jsx";
 import Restore from "./pages/Restore/Restore.jsx";
 import Settings from "./pages/Settings/settings.jsx";
 import Upload from "./pages/Upload/upload.jsx";
@@ -23,11 +23,12 @@ function App() {
         <Route path="/signin" element={<Signin/>} />
         <Route path="/signup" element={<Signup/>} />
         <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="/folder" element={<Folder/>} />
+        {/* <Route path="/folder" element={<Folder/>} /> */}
+        {/* <Route path="/folders/:fileId" element={<Folder/>} /> */}
         <Route path="/restore" element={<Restore/>} />
         <Route path="/settings" element={<Settings/>}/>
         <Route path="/upload" element={<Upload/>}/>
-        <Route path="/details" element={<Details/>} />
+        {/* <Route path="/details" element={<Details/>} /> */}
         
          {/* IF USER LOGIN  */}
 
