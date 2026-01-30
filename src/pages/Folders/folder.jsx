@@ -88,11 +88,13 @@ useEffect(() => {
         <div className="w-64 border-r border-[#0a2a42]">
           <List activeId={2} />
         </div>
-        {offline && (
-          <div className="bg-yellow-900/50 border border-yellow-600 text-yellow-200 p-3 rounded-lg mb-4 text-center">
-            ⚠️ يتم عرض بيانات افتراضية لأن السيرفر غير متصل
-          </div>
-        )}
+        <div className="flex-1 p-6 gap-4 relative">
+          {offline && (
+        <div className="bg-yellow-900/50 border border-yellow-600 text-yellow-200 p-3 rounded-lg  text-center">
+          ⚠️ تعذر لاتصال بالسيرفر- يتم عرض بيانات أفتراضية
+        </div>
+          )}
+
 
       {loading ?(
         <p className="text-white text-right mt-10 ">
@@ -110,6 +112,8 @@ useEffect(() => {
           />
         </div>
       )}
+        </div>
+            
          <div className="relative min-h-[400px]"> {/* الحاوية */}
               <div className="absolute bottom-147 left-180 flex gap-4">
                 <Btn
