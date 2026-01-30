@@ -11,7 +11,6 @@ function List({ activeId }) {
   const mainMenu = [
     { id: 1, name: 'أستعراض الملفات', icon: '📁', path: '/dashboard' },
     { id: 2, name: 'أستعراض المجلدات', icon: '📂', path: '/folder' },
-    { id: 3, name: 'المشاركة', icon: '🔗', path: '/share' },
     { id: 4, name: 'استرجاع الملفات', icon: '↩️', path: '/restore' },
     { id: 5, name: 'رفع الملفات', icon: '⬆️', path: '/upload' },
   ];
