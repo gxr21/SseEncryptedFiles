@@ -12,6 +12,8 @@ function Folder() {
   const [folders,setFolders] = useState([]);
   const [loading,setLoading] = useState(true);
   const [offline,setoffline] = useState(false);
+  const [uploadedFiles, setUploadedFiles] = useState([]);
+
   
     const dashboardColumns = [
     {
@@ -126,8 +128,30 @@ useEffect(() => {
                   color="bg-red-800"
                   hover="hover:bg-red-600"
                 />
+
               </div>
+
             </div>
+
+           
+
+            {uploadedFiles.length > 0 && (
+                    <div className="mt-4">
+                      {uploadedFiles.map((f, idx) => (
+                        <div key={idx} className="text-white text-right">
+                          <a
+                            href={f.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sky-400 hover:underline"
+                          >
+                            {f.name}
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
       </div>
         
         

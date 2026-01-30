@@ -6,6 +6,7 @@ import List from "../../components/List/list.jsx";
 import Table from "../../components/table/table.jsx";
 import Logo from "../../components/logo/logo.jsx";
 import "./dashboard.css";
+import { link } from "motion/react-client";
 
 function Dashboard() {
   const MOCK_DATA = [
@@ -36,7 +37,16 @@ function Dashboard() {
   ];
 
   const dashboardColumns = [
-    { key: "name", label: "اسم الملف" },
+    { key: "name", label: "اسم الملف", 
+      render:(row)=> (
+        <Link
+        to={`/details/${row.id}`}
+        className="text-sky-400 hover:underline"
+        >
+          {row.name}
+        </Link>
+      )
+    },
     { key: "date", label: "تاريخ الرفع" },
     { key: "size", label: "الحجم" },
     {
@@ -126,9 +136,9 @@ function Dashboard() {
             />
           )}
 
-          <button className="bt w-50 h-15 text-white rounded-xl bg-cyan-700 absolute top-195 left-180 hover:bg-cyan-600 text-xl">
+          {/* <button className="bt w-50 h-15 text-white rounded-xl bg-cyan-700 absolute top-195 left-180 hover:bg-cyan-600 text-xl">
             <Link to="/details">تفاصيل الملف</Link>
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
