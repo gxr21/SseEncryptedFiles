@@ -134,7 +134,7 @@ function Dashboard() {
           )}
 
           {isOffline && (
-            <div className="bg-yellow-900/50 border border-yellow-600 text-yellow-200 p-3 rounded-lg mb-4 text-center">
+            <div className="bg-yellow-900/50 border border-yellow-600 text-yellow-200 p-3 rounded-lg mb-4 text-center ">
               ⚠️ تعذر الاتصال بالسيرفر – يتم عرض بيانات افتراضية
             </div>
           )}
