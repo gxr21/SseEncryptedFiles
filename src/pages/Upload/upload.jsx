@@ -8,6 +8,7 @@ function Upload() {
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(0);
   const [uploading, setUploading] = useState(false);
+  const API_UPLOAD_FILE = "http://localhost:3000/api/v1/files/upload";
 
   const handleUpload = async () => {
     if (!file) {
@@ -22,7 +23,7 @@ function Upload() {
       setUploading(true);
       const token = localStorage.getItem("token");
 
-      await axios.post("http://localhost:3000/upload", formData, {
+      await axios.post(API_UPLOAD_FILE, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",

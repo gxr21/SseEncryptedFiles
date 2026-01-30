@@ -2,17 +2,16 @@ import Logo from "../../components/logo/logo";
 import Searchbar from "../../components/search bar/searchbar";
 import List from "../../components/List/list";
 import UserTable from "../../components/table/userTable";
-
+import { useState } from "react";
+// const [User,setUser] = useSate()
+// const API_SETTING_USER = "http://localhost:3000"
 function Settings(){
-     
     return(
     <div className="settings  bg-[#051C2D] min-h-screen">
       <div className="header-section flex items-center justify-between p-6 border-b border-[#0a2a42]">
-
         <div className="logo-container">
           <Logo />
         </div>
-
         <div className="searchbar-container  ">
           <Searchbar />
         </div>
@@ -25,29 +24,10 @@ function Settings(){
        <UserTable
         title={"أعدادات المستخدم"}
         subtitle={"عرض اعدادات المستخدم"}
-
        />
-
-
-
        </div>
-
-        
-          
-   
-    
-      
-         
-
-    
-
-
-
-    
-     </div>
-    
+     </div> 
     </div>
     );
-
 }
 export default Settings;
