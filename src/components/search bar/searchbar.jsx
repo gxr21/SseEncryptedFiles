@@ -95,7 +95,7 @@ function Searchbar({ onSearch, placeholder = "ابحث عن ملفاتك..." }) 
 
         {/* نص "جاري البحث" */}
         {isSearching && (
-          <div className="absolute right-12 top-1/2 transform -translate-y-1/2 text-xs text-[#20C997] animate-pulse">
+          <div className="absolute left-15 top-1/2 transform -translate-y-1/2 text-xs text-[#20C997] animate-pulse ">
             جاري البحث...
           </div>
         )}

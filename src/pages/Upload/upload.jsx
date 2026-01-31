@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Logo from "../../components/logo/logo";
-import Searchbar from "../../components/search bar/searchbar";
+// import Searchbar from "../../components/search bar/searchbar";
 import List from "../../components/List/list";
 
 function Upload() {
@@ -51,9 +51,9 @@ function Upload() {
         <div className="logo-container">
           <Logo />
         </div>
-        <div className="searchbar-container">
+        {/* <div className="searchbar-container">
           <Searchbar />
-        </div>
+        </div> */}
       </div>
 
       

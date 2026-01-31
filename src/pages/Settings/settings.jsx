@@ -164,8 +164,8 @@ function Settings() {
                 </div>
 
                 {/* رسالة توضيحية */}
-                <div className="bg-blue-900/20 border border-blue-800/30 rounded-2xl p-6">
-                  <div className="flex items-start gap-4">
+                <div className="bg-blue-900/20 border border-blue-800/30 rounded-2xl p-6 flex items-end justify-end text-right">
+                  <div className="flex items-start flex-row-reverse gap-4 ">
                     <div className="text-blue-400 text-2xl">💡</div>
                     <div>
                       <h4 className="text-white font-bold mb-2">ملاحظة</h4>
