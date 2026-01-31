@@ -13,6 +13,7 @@ import Settings from "./pages/Settings/settings.jsx";
 import Upload from "./pages/Upload/upload.jsx";
 import Details from "./pages/file Details/details.jsx";
 import PublicRoute from "./utils/ProtectedPage/public.jsx";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary.jsx";
 import "./index.css";
 
 function App() {
@@ -25,7 +26,11 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>}/>
         {/* <Route path="/folder" element={<Folder/>} /> */}
         {/* <Route path="/folders/:fileId" element={<Folder/>} /> */}
-        <Route path="/restore" element={<Restore/>} />
+        <Route path="/restore" element={
+          <ErrorBoundary>
+            <Restore/>
+          </ErrorBoundary>
+        } />
         <Route path="/settings" element={<Settings/>}/>
         <Route path="/upload" element={<Upload/>}/>
         {/* <Route path="/details" element={<Details/>} /> */}
