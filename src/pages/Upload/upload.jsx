@@ -90,13 +90,12 @@ function Upload() {
             
             <label
               htmlFor="fileInput"
-              className="bg-[#2a5a8a] w-60 h-70 rounded-xl relative top-20 left-20 cursor-pointer flex items-center justify-center"
+              className="bg-[#2a5a8a] w-60 h-60 rounded-xl relative top-20 left-20 cursor-pointer flex items-center justify-center"
             >
-              <img
-                className="w-30 h-30"
-                src="dist/Icons/file.png"
-                alt="photo"
-              />
+              <p className="text-white text-2xl ">
+                أضغط هنا
+
+              </p>
             </label>
 
             
