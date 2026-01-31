@@ -8,7 +8,7 @@ import Signup from "./pages/Signup/Signup.jsx";
 import ProtectedRoute from "./utils/ProtectedPage/protected.jsx";
 import Dashboard from "./pages/Dashboard/dashboard.jsx";
 // import Folder from "./pages/Folders/folder.jsx";
-import Restore from "./pages/Restore/Restore.jsx";
+import Restore from "./pages/Restore/Restore.jsx"; 
 import Settings from "./pages/Settings/settings.jsx";
 import Upload from "./pages/Upload/upload.jsx";
 import Details from "./pages/file Details/details.jsx";
