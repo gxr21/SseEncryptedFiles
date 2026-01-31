@@ -35,7 +35,7 @@ const Footer = () => {
 
     try {
       // هنا يمكنك وضع API endpoint الخاص بك
-      const response = await fetch('https://your-api-endpoint.com/send-email', {
+      const response = await fetch('API_ENDPOINT_FOR_SEND_EMAIL', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -71,12 +71,12 @@ const Footer = () => {
                     </div>
                     <div className="flex flex-col items-end">
                         <h3 className="text-[#3A86FF] font-bold text-lg mb-4 ">طرق التواصل</h3>
-                        <div className="text-white flex justify-end gap-2 mb-3" dir="rtl">
+                        <div className="text-white flex justify-end gap-2 mb- " dir="rtl">
                             <span>الهاتف : 077xxxxxxxxx</span>
                             <img src="Icons/phone-call.png" className="w-5 h-5 invert" />
                         </div>
                         <div className="text-white flex justify-end gap-2 mb-3" dir="rtl">
-                            <span>البريد الاكتروني : aboali@gmail.com</span>
+                            <span>البريد الاكتروني : example@gmail.com</span>
                             <img src="Icons/mail.png" className="w-5 h-5 invert" />
                         </div>
                         <div className="text-white flex justify-end gap-2 mb-3" dir="rtl">
@@ -91,18 +91,21 @@ const Footer = () => {
                             <label className="block text-[#CFD3D7] mb-2">البريد الاكتروني</label>
                             <input 
                                 type="email" 
-                                placeholder="ادخل ايميلك" 
+                                // placeholder="ادخل ايميلك" 
+                                placeholder="معطل في الوقت الحالي  يتم تطويره مستقبلا"
                                 value={email}
                                 onChange={handleEmailChange}
                                 className="w-full bg-[#2E3B4A] text-white placeholder-gray-400 p-3 border border-[#3A86FF] rounded-md outline-none mb-2 text-right" 
                                 required
+                                disabled 
                             />
                             {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
                             {message && <p className="text-green-500 text-sm mb-2">{message}</p>}
                             <button 
                                 type="submit" 
                                 className="bg-[#3A86FF] text-white w-32 py-2 rounded-md hover:bg-[#2957cc] transition disabled:opacity-50 disabled:cursor-not-allowed"
-                                disabled={loading}
+                                // disabled={loading}  في الوقت الحالي
+                                disabled
                             >
                                 {loading ? 'جاري الإرسال...' : 'ارسال'}
                             </button>

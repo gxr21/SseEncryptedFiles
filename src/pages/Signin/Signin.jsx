@@ -15,21 +15,29 @@ function Signin() {
   e.preventDefault();
   setLoading(true);
   const data = {email,password};
+  console.log("📤 جاري إرسال ...");
   try {
     const response = await axios.post(
       "http://localhost:3000/api/v1/auth/login",data);
+      console.log("✅ استجابة السيرفر:", response.data);
       if (response.status === 200 || response.status === 201) {
         // localStorage.setItem("token", response.data.token);
         // localStorage.setItem("user", JSON.stringify(response.data.user));
         login(response.data)
+        console.log("✅ تم حفظ البيانات في localStorage");
         alert("تم تسجيل الدخول بنجاح");
         navigate("/dashboard");
       }
 
   } catch (error) {
+    console.error("❌ خطأ في الاتصال:", error);
+    console.error("📝 تفاصيل الخطأ:", {
+      message: error.message,
+      response: error.response?.data,
+      status: error.response?.status
+    });
     alert(error.response?.data?.message || "حدث خطأ غير متوقع");
     setLoading(false);
-    console.log("Error", error);
   }
   finally {
     setLoading(false);

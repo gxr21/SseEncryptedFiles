@@ -173,7 +173,7 @@ function Settings() {
                         يمكنك التواصل مع الدعم الفني لتعديل معلومات حسابك أو تغيير كلمة المرور.
                       </p>
                       <p className="text-blue-300 text-sm mt-2">
-                        ITsupport@gmail.com
+                        يتم تطرير خدمة الدعم الفني في وقت لاحق
                       </p>
                     </div>
                   </div>

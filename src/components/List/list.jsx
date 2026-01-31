@@ -57,7 +57,7 @@ function List({ activeId }) {
   const mainMenu = [
     { id: 1, name: 'أستعراض الملفات', icon: '📁', path: '/dashboard' },
     { id: 2, name: 'استرجاع الملفات', icon: '↩️', path: '/restore' },
-    { id: 3, name: 'رفع الملفات', icon: '⬆️', path: '/upload' },
+    { id: 3, name: 'رفع الملفات', icon: '⬆️', path: '/upload' },   
   ];
 
   const isActive = (id) => id === activeId;
