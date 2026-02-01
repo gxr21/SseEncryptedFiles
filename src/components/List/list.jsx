@@ -20,7 +20,7 @@ function List({ activeId }) {
       }
 
       // جلب بيانات المستخدم
-      const userResponse = await axios.get("http://localhost:3000/api/v1/auth/me", {
+      const userResponse = await axios.get("https://sseencryptedfiles-backend.onrender.com/api/v1/auth/me", {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUser(userResponse.data);
@@ -130,7 +130,7 @@ function List({ activeId }) {
                   <span className="text-xl">{item.icon}</span>
                   <span className="font-medium">{item.name}</span>
                 </div>
-                <span className={`w-1.5 h-1.5 rounded-full ${isActive(item.id) ? 'bg-white' : 'bg-transparent'}`} />
+                <span className={`w-1.5 h-1.5 rounded-full ${isActive(item.id) ? 'bg-white' : 'bg-[#20C997]'}`} />
               </Link>
             </li>
           ))}
