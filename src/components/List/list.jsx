@@ -20,7 +20,7 @@ function List({ activeId }) {
       }
 
       // جلب بيانات المستخدم
-      const userResponse = await axios.get("http://localhost:3000/api/v1/auth/me", {
+      const userResponse = await axios.get("https://sseencryptedfiles-backend.onrender.com/api/v1/auth/me", {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUser(userResponse.data);
