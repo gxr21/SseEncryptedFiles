@@ -7,7 +7,7 @@ import Table from "../../components/table/table.jsx";
 import Logo from "../../components/logo/logo.jsx";
 import "./dashboard.css";
 
-const API_USER_FILES = "http://localhost:3000/api/v1/files";
+const API_USER_FILES = "https://sseencryptedfiles-backend.onrender.com/api/v1/files";
 
 function Dashboard() {
   const [files, setFiles] = useState([]);

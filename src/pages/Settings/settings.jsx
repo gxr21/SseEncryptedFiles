@@ -14,7 +14,7 @@ function Settings() {
       setLoading(true);
       const token = localStorage.getItem("token");
 
-      const response = await axios.get("http://localhost:3000/api/v1/auth/me", {
+      const response = await axios.get("https://sseencryptedfiles-backend.onrender.com/api/v1/auth/me", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

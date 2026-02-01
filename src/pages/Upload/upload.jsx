@@ -8,7 +8,7 @@ function Upload() {
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(0);
   const [uploading, setUploading] = useState(false);
-  const API_UPLOAD_FILE = "http://localhost:3000/api/v1/files/upload";
+  const API_UPLOAD_FILE = "https://sseencryptedfiles-backend.onrender.com/api/v1/files/upload";
 
   const handleUpload = async () => {
     if (!file) {

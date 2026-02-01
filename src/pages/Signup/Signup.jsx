@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 import { Link } from "react-router-dom";
-const API_AUTH_REGISTER = "http://localhost:3000/api/v1/auth/register";
+const API_AUTH_REGISTER = "https://sseencryptedfiles-backend.onrender.com/api/v1/auth/register";
 
 function Signup() {
   const [fullName, setFullName] = useState("");
