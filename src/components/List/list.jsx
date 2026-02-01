@@ -130,7 +130,7 @@ function List({ activeId }) {
                   <span className="text-xl">{item.icon}</span>
                   <span className="font-medium">{item.name}</span>
                 </div>
-                <span className={`w-1.5 h-1.5 rounded-full ${isActive(item.id) ? 'bg-[#20C997]' : 'bg-transparent'}`} />
+                <span className={`w-1.5 h-1.5 rounded-full ${isActive(item.id) ? 'bg-white' : 'bg-[#20C997]'}`} />
               </Link>
             </li>
           ))}
