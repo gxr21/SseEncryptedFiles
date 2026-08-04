@@ -14,7 +14,7 @@ function Settings() {
       setLoading(true);
       const token = localStorage.getItem("token");
 
-      const response = await axios.get("https://sseencryptedfiles-backend.onrender.com/api/v1/auth/me", {
+      const response = await axios.get("http://localhost:3000/api/v1/auth/me", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -38,9 +38,9 @@ function Settings() {
       {/* Header */}
       <div className="header-section flex items-center justify-between p-6 border-b border-[#0a2a42]">
         <Logo />
-        <div className="w-[400px]">
+        {/* <div className="w-[400px]">
           <Searchbar />
-        </div>
+        </div> */}
       </div>
 
       <div className="main-content flex rounded-2xl">

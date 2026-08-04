@@ -18,11 +18,11 @@ function Signin() {
   console.log("📤 جاري إرسال ...");
   try {
     const response = await axios.post(
-      "https://sseencryptedfiles-backend.onrender.com/api/v1/auth/login",data);
+      "http://localhost:3000/api/v1/auth/login",data);
       console.log("✅ استجابة السيرفر:", response.data);
       if (response.status === 200 || response.status === 201) {
-        // localStorage.setItem("token", response.data.token);
-        // localStorage.setItem("user", JSON.stringify(response.data.user));
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("user", JSON.stringify(response.data.user));
         login(response.data)
         console.log("✅ تم حفظ البيانات في localStorage");
         alert("تم تسجيل الدخول بنجاح");

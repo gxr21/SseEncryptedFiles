@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 // الثوابت والروابط
-const API_BASE_URL = "https://sseencryptedfiles-backend.onrender.com/api/v1/files";
+const API_BASE_URL = "http://localhost:3000/api/v1/files";
 const API_TRASH_URL = `${API_BASE_URL}/trash`;
 const API_RESTORE_URL = `${API_BASE_URL}/restore`;
 
@@ -15,7 +15,6 @@ function Restore() {
   const [loading, setLoading] = useState(true);
   const [openDelete, setOpenDelete] = useState(false);
   const [selectedFileId, setSelectedFileId] = useState(null);
-
   // 1️⃣ جلب الملفات المحذوفة
   const fetchDeletedFiles = async () => {
     try {
@@ -145,7 +144,7 @@ function Restore() {
             />
           ) : (
             <div className="text-center mt-20 text-gray-400">
-                <p className="text-xl">سلة المحذوفات فارغة 🎉</p>
+                <p className="text-xl">سلة المحذوفات فارغة </p>
             </div>
           )}
         </div>
