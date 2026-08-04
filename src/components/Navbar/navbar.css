@@ -1,5 +1,21 @@
-.logo{
-    font-family: 'Roboto' sans-serif;
-    font-weight: 500;
-    font-style: normal;
+.navbar {
+  width: 100%;
+}
+
+.nav-actions,
+.nav-links,
+.logo {
+  min-width: 0;
+}
+
+.logo {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@media (max-width: 1023px) {
+  .nav-links {
+    width: 100%;
+  }
 }

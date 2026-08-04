@@ -1,153 +1,5 @@
-/* ============================== */
-/*       GLOBAL ENCRYPTION BG     */
-/* ============================== */
-
-.encryption-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100vh;
-
-  background: linear-gradient(135deg, #0a1929 0%, #051C2D 50%, #0d2438 100%);
-  overflow: hidden;
-
-  /* أهم نقطة حتى تكون الخلفية وراء كل شيء */
-  z-index: -10;
-  pointer-events: none;
-}
-
-/* شبكة خلفية ثابتة */
-.encryption-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(32, 201, 151, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(32, 201, 151, 0.08) 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.4;
-}
-
-/* توهج أخضر */
-.encryption-bg::after {
-  content: "";
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(32, 201, 151, 0.15), transparent 65%);
-  top: 20%;
-  left: 70%;
-  border-radius: 50%;
-  filter: blur(60px);
-  animation: gentlePulse 8s ease-in-out infinite;
-}
-
-/* نقاط متحركة */
-.encryption-particles {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.particle {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: rgba(32, 201, 151, 0.6);
-  border-radius: 50%;
-  box-shadow: 0 0 4px rgba(32, 201, 151, 0.8);
-  animation: floatParticle 15s ease-in-out infinite;
-}
-
-.particle:nth-child(1) { top: 15%; left: 20%; animation-delay: 0s; animation-duration: 12s; }
-.particle:nth-child(2) { top: 65%; left: 80%; animation-delay: 2s; animation-duration: 14s; }
-.particle:nth-child(3) { top: 40%; left: 10%; animation-delay: 4s; animation-duration: 16s; }
-.particle:nth-child(4) { top: 80%; left: 50%; animation-delay: 1s; animation-duration: 13s; }
-.particle:nth-child(5) { top: 25%; left: 90%; animation-delay: 3s; animation-duration: 15s; }
-
-/* أكواد ثنائية */
-.binary-float {
-  position: absolute;
-  font-family: 'Courier New', monospace;
-  font-size: 11px;
-  color: rgba(32, 201, 151, 0.15);
-  white-space: nowrap;
-  animation: floatBinary 20s linear infinite;
-}
-
-.binary-float:nth-child(1) { top: 10%; left: -10%; animation-delay: 0s; }
-.binary-float:nth-child(2) { top: 50%; left: -15%; animation-delay: 5s; }
-.binary-float:nth-child(3) { top: 80%; left: -20%; animation-delay: 10s; }
-
-/* خط المسح */
-.scan-line {
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(32, 201, 151, 0.4) 50%, transparent);
-  animation: scanMove 6s ease-in-out infinite;
-}
-
-/* توهجات الزوايا */
-.corner-glow {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.1;
-}
-
-.corner-glow.top-left {
-  top: -100px;
-  left: -100px;
-  background: radial-gradient(circle, rgba(32, 201, 151, 0.3), transparent);
-}
-
-.corner-glow.bottom-right {
-  bottom: -100px;
-  right: -100px;
-  background: radial-gradient(circle, rgba(32, 201, 151, 0.25), transparent);
-}
-
-/* ===================== */
-/*       ANIMATIONS      */
-/* ===================== */
-
-@keyframes gentlePulse {
-  0%, 100% { transform: scale(1); opacity: 0.15; }
-  50% { transform: scale(1.1); opacity: 0.25; }
-}
-
-@keyframes floatParticle {
-  0%, 100% { transform: translateY(0); opacity: 0.4; }
-  50% { transform: translateY(-30px); opacity: 0.8; }
-}
-
-@keyframes floatBinary {
-  0% { transform: translateX(0); opacity: 0; }
-  10%, 90% { opacity: 0.15; }
-  100% { transform: translateX(120vw); opacity: 0; }
-}
-
-@keyframes scanMove {
-  0%, 100% { transform: translateY(-100vh); opacity: 0; }
-  10%, 90% { opacity: 0.5; }
-  100% { transform: translateY(100vh); }
-}
-
-/* تحسين الموبايل */
-@media (max-width: 768px) {
-  .binary-float,
-  .particle {
-    display: none;
-  }
-}
-
 /* === Main Container === */
-.signin-container {
+.signup-container {
   background-color: #051C2D;
   height: 100vh;
   width: 100%;
@@ -156,7 +8,7 @@
 }
 
 /* === Card Box === */
-.signin-card {
+.signup-card {
   height: 580px;
   width: 900px;
   background-color: rgba(8, 47, 77, 1);
@@ -169,7 +21,7 @@
 }
 
 /* === Left Side (Message + New Account Button) === */
-.signup-side {
+.signin-side {
   flex: 1;
   padding: 50px 40px;
   display: flex;
@@ -177,20 +29,20 @@
   justify-content: center;
   align-items: flex-end;
 }
-.signup-side-title {
+.signin-side-title {
   font-size: 28px;
   font-weight: bold;
   color: azure;
   margin-bottom: 10px;
   text-align: right;
 }
-.signup-side-subtitle {
+.signin-side-subtitle {
   color: azure;
   font-size: 16px;
   margin-bottom: 30px;
   text-align: right;
 }
-.signup-side-button {
+.signin-side-button {
   height: 45px;
   width: 300px;
   background-color: azure;
@@ -208,7 +60,7 @@
 }
 
 /* === Form Section === */
-.signin-form-wrapper {
+.signup-form-wrapper {
   background-color: azure;
   height: 100%;
   width: 55%;
@@ -219,140 +71,169 @@
   padding: 30px;
 }
 
-.signin-form {
+.signup-form {
   background-color: azure;
-  height: 100%;
+  height: 105%;
   width: 100%;
   box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
   border-radius: 20px;
-  padding: 40px;
+  padding: 30px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.signin-title {
+.signup-title {
   text-align: right;
-  position: relative;
-  top: -20px;
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 30px;
+  position: relative;
+  top: -20px;
   color: #051C2D;
 }
 
-.signin-label {
+.signup-label1,.signup-label2,.signup-label3 {
   text-align: right;
   font-size: 16px;
   display: block;
   margin-bottom: 8px;
+  position: relative;
+  top: -30px;
   font-weight: 500;
   color: #333;
 }
 
-.signin-input {
+
+.signup-input1 , .signup-input2 
+,.signup-input3 , .signup-input4 {
   width: 100%;
-  height: 40px;
+  height: 50px;
   border-radius: 8px;
   background-color: rgba(48, 48, 48, 0.08);
   box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  position: relative;
+  top: -30px;
+  padding-bottom:3px ;
   padding-right: 15px;
   border: 1px solid rgba(0,0,0,0.1);
   font-size: 15px;
   transition: all 0.3s ease;
 }
 
-.signin-input:focus {
+.signup-input:focus {
   outline: none;
   border-color: #051C2D;
   box-shadow: 0px 2px 8px rgba(5, 28, 45, 0.2);
 }
 
-.signin-button {
+.signup-button {
   width: 100%;
-  height: 50px;
+  height: 80px;
   background-color: rgb(3, 32, 54);
   color: white;
   border-radius: 8px;
   font-size: 18px;
   font-weight: bold;
+  position: relative;
+  bottom: 10px;
   margin-top: 10px;
   cursor: pointer;
   border: none;
   transition: all 0.3s ease;
 }
 
-.signin-button:hover {
+.signup-button:hover {
   background-color: rgb(5, 45, 75);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
+.signup-button:disabled {
+  opacity: 0.75;
+  cursor: wait;
+}
+
 @media (max-width: 960px) {
-  .signin-container {
+  .signup-container {
     min-height: 100vh;
     height: auto;
     padding: 24px 16px;
     align-items: center;
   }
 
-  .signin-card {
+  .signup-card {
     position: static;
     transform: none;
-    width: min(100%, 520px);
+    width: min(100%, 540px);
     height: auto;
-    min-height: auto;
-    flex-direction: column-reverse;
+    flex-direction: column;
     border-radius: 22px;
     overflow: hidden;
   }
 
-  .signup-side {
+  .signin-side {
     width: 100%;
-    padding: 28px 24px;
+    padding: 26px 24px;
     align-items: stretch;
     text-align: right;
   }
 
-  .signup-side-title {
+  .signin-side-title {
     font-size: 24px;
   }
 
-  .signup-side-button {
+  .signin-side-button {
     width: 100%;
   }
 
-  .signin-form-wrapper {
+  .signup-form-wrapper {
     width: 100%;
     height: auto;
     border-radius: 18px;
-    padding: 18px;
+    padding: 16px;
   }
 
-  .signin-form {
+  .signup-form {
     height: auto;
     min-height: 0;
-    padding: 28px 20px;
+    padding: 28px 20px 22px;
   }
 
-  .signin-title {
-    top: 0;
+  .signup-title,
+  .signup-label1,
+  .signup-label2,
+  .signup-label3,
+  .signup-input1,
+  .signup-input2,
+  .signup-input3,
+  .signup-input4,
+  .signup-button {
+    position: static;
+  }
+
+  .signup-title {
     font-size: 28px;
     margin-bottom: 22px;
+  }
+
+  .signup-button {
+    height: 54px;
   }
 }
 
 @media (max-width: 420px) {
-  .signin-container {
+  .signup-container {
     padding: 16px 10px;
   }
 
-  .signin-card {
+  .signup-card {
     border-radius: 18px;
   }
 
-  .signin-form {
-    padding: 24px 14px;
+  .signup-form {
+    padding: 24px 14px 18px;
   }
 }
