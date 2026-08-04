@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../utils/Context/useAuth";
 import "./Signin.css";
 import { Link } from "react-router-dom";
+import { apiUrl } from "../../config/api";
 function Signin() {
    const [email,setEmail] = useState("")
    const [password,setPassword]=useState("")
@@ -18,7 +19,7 @@ function Signin() {
   console.log("📤 جاري إرسال ...");
   try {
     const response = await axios.post(
-      "http://localhost:3000/api/v1/auth/login",data);
+      apiUrl("/api/v1/auth/login"),data);
       console.log("✅ استجابة السيرفر:", response.data);
       if (response.status === 200 || response.status === 201) {
         localStorage.setItem("token", response.data.token);

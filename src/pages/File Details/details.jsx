@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { apiUrl } from "../../config/api";
 
 // تأكد أن الرابط يطابق الباك إند الخاص بك
-const API_URL = "http://localhost:3000/file"; 
+const API_URL = apiUrl("/api/v1/files"); 
 
 function Details() {
   const { id } = useParams(); // 1. استلام الـ ID من الرابط

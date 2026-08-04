@@ -6,8 +6,9 @@ import List from "../../components/List/list.jsx";
 import Table from "../../components/table/table.jsx";
 import Logo from "../../components/logo/logo.jsx";
 import "./dashboard.css";
+import { apiUrl } from "../../config/api";
 
-const API_USER_FILES = "http://localhost:3000/api/v1/files";
+const API_USER_FILES = apiUrl("/api/v1/files");
 
 function Dashboard() {
   const [files, setFiles] = useState([]);

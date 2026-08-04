@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 import { Link } from "react-router-dom";
-const API_AUTH_REGISTER = "http://localhost:3000/api/v1/auth/register";
+import { apiUrl } from "../../config/api";
+const API_AUTH_REGISTER = apiUrl("/api/v1/auth/register");
 function Signup() {
   const [fullName, setFullName] = useState("");
   const [username, setUsername] = useState("");

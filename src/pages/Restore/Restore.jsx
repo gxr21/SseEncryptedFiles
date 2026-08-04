@@ -4,9 +4,10 @@ import List from "../../components/List/list";
 import Table from "../../components/table/table.jsx";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { apiUrl } from "../../config/api";
 
 // الثوابت والروابط
-const API_BASE_URL = "http://localhost:3000/api/v1/files";
+const API_BASE_URL = apiUrl("/api/v1/files");
 const API_TRASH_URL = `${API_BASE_URL}/trash`;
 const API_RESTORE_URL = `${API_BASE_URL}/restore`;
 

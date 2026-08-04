@@ -2,6 +2,7 @@ import './list.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { apiUrl } from '../../config/api';
 
 function List({ activeId }) {
   const navigate = useNavigate();
@@ -20,14 +21,14 @@ function List({ activeId }) {
       }
 
       // جلب بيانات المستخدم
-      const userResponse = await axios.get("http://localhost:3000/api/v1/auth/me", {
+      const userResponse = await axios.get(apiUrl("/api/v1/auth/me"), {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUser(userResponse.data);
 
       // جلب الملفات لحساب التخزين
       // لاحقا يتم تفعيلها
-      // const filesResponse = await axios.get("http://localhost:3000/api/v1/files", {
+      // const filesResponse = await axios.get(apiUrl("/api/v1/files"), {
       //   headers: { Authorization: `Bearer ${token}` }
       // });
 

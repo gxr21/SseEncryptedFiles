@@ -5,8 +5,9 @@ import Searchbar from "../../components/search bar/searchbar.jsx";
 import Table from "../../components/table/table.jsx";
 import List from "../../components/List/list.jsx";
 import Btn from "../../components/Buttons/colors/Red.jsx";
+import { apiUrl } from "../../config/api";
 
-const API_BASE_URL = "http://localhost:3000/api/v1/folders";
+const API_BASE_URL = apiUrl("/api/v1/folders");
 
 function Folder() {
   const [folders, setFolders] = useState([]);

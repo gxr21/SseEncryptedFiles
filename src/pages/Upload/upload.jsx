@@ -4,12 +4,13 @@ import Logo from "../../components/logo/logo";
 import { AuthContext } from "../../utils/Context/AuthContext";
 // import Searchbar from "../../components/search bar/searchbar";
 import List from "../../components/List/list";
+import { apiUrl } from "../../config/api";
 function Upload() {
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(0);
   const [uploading, setUploading] = useState(false);
   // const { user } = useContext(AuthContext);
-  const API_UPLOAD_FILE = "http://localhost:3000/api/v1/files/upload";
+  const API_UPLOAD_FILE = apiUrl("/api/v1/files/upload");
   const handleUpload = async () => {
     // if (!user){
     //   alert("يرجى تسجيل الدخول اولاً");

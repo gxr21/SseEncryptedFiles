@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Logo from "../../components/logo/logo";
 import Searchbar from "../../components/search bar/searchbar";
 import List from "../../components/List/list";
+import { apiUrl } from "../../config/api";
 
 function Settings() {
   const [user, setUser] = useState(null);
@@ -14,7 +15,7 @@ function Settings() {
       setLoading(true);
       const token = localStorage.getItem("token");
 
-      const response = await axios.get("http://localhost:3000/api/v1/auth/me", {
+      const response = await axios.get(apiUrl("/api/v1/auth/me"), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
