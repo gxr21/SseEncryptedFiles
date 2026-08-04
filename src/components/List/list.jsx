@@ -69,7 +69,7 @@ function List({ activeId }) {
      hover:translate-x-[-4px]
      ${
        active
-         ? 'bg-gradient-to-r from-[#20C997] to-[#1aa67e] text-white shadow-lg'
+         ? 'active-menu-item bg-gradient-to-r from-[#20C997] to-[#1aa67e] text-white shadow-lg'
          : 'text-gray-300 hover:bg-[#1a3a5a] hover:text-white'
      }`;
 //  لاحقا يتم تفعيلها
