@@ -58,8 +58,8 @@ const Footer = () => {
 
   return (
         <>
-            <div className="bg-[#283646] p-20 text-right">
-                <div className="grid grid-cols-3 gap-20 items-start">
+            <div className="bg-[#283646] p-6 md:p-12 lg:p-20 text-right">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 lg:gap-20 items-start">
                     <div>
                         <h3 className="text-[#3A86FF] font-bold text-lg mb-4">اسم الشركة</h3>
                         <p className="text-white leading-loose">
@@ -84,9 +84,9 @@ const Footer = () => {
                             <img src="Icons/location.png" className="w-5 h-5 invert" />
                         </div>
                     </div>
-                    <div className="relative">
+                    <div className="relative md:col-span-2 xl:col-span-1">
                         <form onSubmit={handleSubmit}>
-                            <img src="Icons/shield.png" className="absolute left-0 top-0 w-14 h-14" />
+                            <img src="Icons/shield.png" className="absolute left-0 top-0 w-10 h-10 md:w-14 md:h-14" />
                             <h3 className="text-[#3A86FF] font-bold text-lg mb-4">شفر بياناتك بأمان</h3>
                             <label className="block text-[#CFD3D7] mb-2">البريد الاكتروني</label>
                             <input 

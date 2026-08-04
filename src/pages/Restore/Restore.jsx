@@ -116,24 +116,24 @@ function Restore() {
   ];
 
   return (
-    <div className="Restore bg-[#051C2D] min-h-screen">
+    <div className="Restore bg-[#051C2D] min-h-screen overflow-x-hidden">
       {/* الهيدر */}
-      <div className="header-section flex items-center justify-between p-6 border-b border-[#0a2a42]">
+      <div className="header-section flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-4 md:p-6 border-b border-[#0a2a42]">
         <Logo />
-        <div className="w-[400px]">
+        <div className="w-full sm:max-w-[400px]">
           <Searchbar />
         </div>
       </div>
 
       {/* المحتوى الرئيسي */}
-      <div className="main-content flex rounded-2xl">
+      <div className="main-content flex flex-col lg:flex-row rounded-2xl">
         {/* القائمة الجانبية */}
-        <div className="w-64 border-r border-[#0a2a42]">
+        <div className="w-full lg:w-64 lg:min-h-[calc(100vh-89px)] border-b lg:border-b-0 lg:border-r border-[#0a2a42]">
           <List activeId={4} />
         </div>
 
         {/* الجدول */}
-        <div className="flex-1 p-6">
+        <div className="flex-1 p-4 md:p-6 min-w-0">
           {loading ? (
             <p className="text-white text-center mt-10">جاري التحميل...</p>
           ) : deletedFiles.length > 0 ? (
@@ -153,8 +153,8 @@ function Restore() {
 
       {/* نافذة التأكيد (Popup) */}
       {openDelete && (
-        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
-          <div className="bg-[#0a2a42] p-8 rounded-xl text-center w-96 border border-[#2a5a8a] shadow-2xl">
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+          <div className="bg-[#0a2a42] p-5 md:p-8 rounded-xl text-center w-full max-w-96 border border-[#2a5a8a] shadow-2xl">
             <p className="text-white text-xl mb-8">هل أنت متأكد من حذف الملف نهائياً؟ لا يمكن التراجع عن هذا الإجراء.</p>
             <div className="flex justify-center gap-4">
               <button

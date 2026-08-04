@@ -64,7 +64,7 @@ function List({ activeId }) {
   const isActive = (id) => id === activeId;
 
   const itemClass = (active) =>
-    `w-full text-right px-4 py-3.5 rounded-xl
+    `w-full text-right px-4 py-3 rounded-xl
      flex items-center justify-between
      transition-all duration-300 transform
      hover:translate-x-[-4px]
@@ -91,26 +91,26 @@ function List({ activeId }) {
     <div className="list-container h-full flex flex-col bg-gradient-to-b from-[#0a2538] to-[#051C2D]">
 
       {/* User Profile */}
-      <div className="p-6 flex flex-col items-center border-b border-[#1a3a5a]">
+      <div className="p-4 lg:p-6 flex flex-col items-center border-b border-[#1a3a5a]">
         {loading ? (
           <div className="flex flex-col items-center">
-            <div className="w-24 h-24 rounded-full bg-gray-700 animate-pulse mb-4"></div>
+            <div className="w-16 h-16 lg:w-24 lg:h-24 rounded-full bg-gray-700 animate-pulse mb-4"></div>
             <div className="h-6 w-32 bg-gray-700 rounded animate-pulse mb-2"></div>
             <div className="h-4 w-40 bg-gray-800 rounded animate-pulse"></div>
           </div>
         ) : (
           <>
             <div className="relative mb-4">
-              <div className="w-24 h-24 rounded-full bg-gradient-to-r from-cyan-600 to-blue-800 flex items-center justify-center">
-                <span className="text-white text-3xl font-bold">
+              <div className="w-16 h-16 lg:w-24 lg:h-24 rounded-full bg-gradient-to-r from-cyan-600 to-blue-800 flex items-center justify-center">
+                <span className="text-white text-2xl lg:text-3xl font-bold">
                   {user?.name?.charAt(0) || 'U'}
                 </span>
               </div>
             </div>
-            <p className="font-bold text-white text-xl mb-1">
+            <p className="font-bold text-white text-lg lg:text-xl mb-1 max-w-full truncate">
               {user?.name || "المستخدم"}
             </p>
-            <p className="text-gray-400 text-sm text-center">
+            <p className="text-gray-400 text-sm text-center max-w-full truncate">
               {user?.email || "user@example.com"}
             </p>
           </>
@@ -118,7 +118,7 @@ function List({ activeId }) {
       </div>
 
       {/* Navigation */}
-      <div className="flex-1 p-4 overflow-y-auto">
+      <div className="flex-1 p-3 lg:p-4 overflow-y-auto">
         <h3 className="text-gray-400 text-sm font-semibold mb-3 px-2">
           القائمة الرئيسية
         </h3>

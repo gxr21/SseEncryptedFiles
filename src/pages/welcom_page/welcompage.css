@@ -155,3 +155,64 @@
 .Landingpage{
    font-family: 'Tajawal';
 }
+
+.Landingpage #recommendations-section > div > div {
+  width: min(100%, 80rem);
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3.5rem !important;
+  align-items: start;
+}
+
+.Landingpage #recommendations-section h1,
+.Landingpage #recommendations-section p,
+.Landingpage #recommendations-section li,
+.Landingpage #about-section p,
+.Landingpage #hero-section p {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1024px) {
+  .Landingpage #recommendations-section > div > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .Landingpage #hero-section {
+    padding-inline: 1rem;
+  }
+
+  .Landingpage #hero-section h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .Landingpage #hero-section p {
+    width: 100%;
+    max-width: 42rem;
+    font-size: 1.125rem;
+  }
+
+  .Landingpage #about-section,
+  .Landingpage #recommendations-section {
+    padding: 5rem 1rem;
+  }
+
+  .Landingpage #about-section h1,
+  .Landingpage #recommendations-section > h1 {
+    font-size: 2rem;
+    position: static;
+  }
+
+  .Landingpage #about-section p,
+  .Landingpage #recommendations-section p,
+  .Landingpage #recommendations-section li {
+    font-size: 1.125rem;
+  }
+
+  .Landingpage #recommendations-section > div > div {
+    grid-template-columns: 1fr;
+    gap: 2.5rem !important;
+  }
+}

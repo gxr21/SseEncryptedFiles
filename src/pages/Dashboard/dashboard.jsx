@@ -207,10 +207,10 @@ function Dashboard() {
   }, []);
 
   return (
-    <div className="dashboard bg-[#051C2D] min-h-screen overflow-hidden">
-      <div className="header-section flex items-center justify-between p-6 border-b border-[#0a2a42]">
+    <div className="dashboard bg-[#051C2D] min-h-screen overflow-x-hidden">
+      <div className="header-section flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-4 md:p-6 border-b border-[#0a2a42]">
         <Logo />
-        <div className="w-[400px]">
+        <div className="w-full sm:max-w-[400px]">
           {/* Searchbar مع دالة البحث */}
           <Searchbar 
             onSearch={handleSearch}
@@ -219,12 +219,12 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className="main-content flex rounded-2xl">
-        <div className="w-64 border-r border-[#0a2a42]">
+      <div className="main-content flex flex-col lg:flex-row rounded-2xl">
+        <div className="w-full lg:w-64 lg:min-h-[calc(100vh-89px)] border-b lg:border-b-0 lg:border-r border-[#0a2a42]">
           <List activeId={1} />
         </div>
 
-        <div className="flex-1 p-6 gap-4 relative">
+        <div className="flex-1 p-4 md:p-6 gap-4 relative min-w-0">
           
           {error && !isOffline && (
              <div className="bg-red-900/50 border border-red-600 text-red-200 p-3 rounded-lg mb-4 text-center">
@@ -241,7 +241,7 @@ function Dashboard() {
           {/* عرض نتائج البحث */}
           {searchTerm && (
             <div className="mb-4 p-3 bg-cyan-900/20 border border-cyan-700/30 rounded-lg">
-              <div className="flex justify-between items-center">
+              <div className="flex flex-col sm:flex-row gap-2 justify-between items-start sm:items-center">
                 <span className="text-cyan-300">
                   🔍 نتائج البحث عن: "<span className="font-bold">{searchTerm}</span>"
                 </span>

@@ -288,3 +288,71 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+@media (max-width: 960px) {
+  .signin-container {
+    min-height: 100vh;
+    height: auto;
+    padding: 24px 16px;
+    align-items: center;
+  }
+
+  .signin-card {
+    position: static;
+    transform: none;
+    width: min(100%, 520px);
+    height: auto;
+    min-height: auto;
+    flex-direction: column-reverse;
+    border-radius: 22px;
+    overflow: hidden;
+  }
+
+  .signup-side {
+    width: 100%;
+    padding: 28px 24px;
+    align-items: stretch;
+    text-align: right;
+  }
+
+  .signup-side-title {
+    font-size: 24px;
+  }
+
+  .signup-side-button {
+    width: 100%;
+  }
+
+  .signin-form-wrapper {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    padding: 18px;
+  }
+
+  .signin-form {
+    height: auto;
+    min-height: 0;
+    padding: 28px 20px;
+  }
+
+  .signin-title {
+    top: 0;
+    font-size: 28px;
+    margin-bottom: 22px;
+  }
+}
+
+@media (max-width: 420px) {
+  .signin-container {
+    padding: 16px 10px;
+  }
+
+  .signin-card {
+    border-radius: 18px;
+  }
+
+  .signin-form {
+    padding: 24px 14px;
+  }
+}

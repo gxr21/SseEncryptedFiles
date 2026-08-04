@@ -50,8 +50,8 @@ function Upload() {
     }
   };
   return (
-    <div className="main-upload bg-[#051C2D] min-h-screen">
-      <div className="header-section flex items-center justify-between p-6 border-b border-[#0a2a42]">
+    <div className="main-upload bg-[#051C2D] min-h-screen overflow-x-hidden">
+      <div className="header-section flex items-center justify-between p-4 md:p-6 border-b border-[#0a2a42]">
         <div className="logo-container">
           <Logo />
         </div>
@@ -59,23 +59,25 @@ function Upload() {
           <Searchbar />
         </div> */}
       </div>   
-      <div className="main flex rounded-2xl">
-        <div className="w-64 border-r border-[#0a2a42]">
+      <div className="main flex flex-col lg:flex-row rounded-2xl">
+        <div className="w-full lg:w-64 lg:min-h-[calc(100vh-89px)] border-b lg:border-b-0 lg:border-r border-[#0a2a42]">
           <List activeId={5} />
         </div>
 
+        <div className="flex-1 p-4 md:p-8 min-w-0">
+          <div className="max-w-5xl mx-auto">
         <div className="titles">
-          <div className="relative top-14 left-298">
-            <h1 className="text-white text-3xl font-bold text-right">
+          <div className="mb-6 text-right">
+            <h1 className="text-white text-2xl md:text-3xl font-bold text-right">
               رفع الملفات
             </h1>
-            <h3 className="text-gray-300 text-lg text-right font-medium">
+            <h3 className="text-gray-300 text-base md:text-lg text-right font-medium">
               أضافة ملفات و رفعها في النظام
             </h3>
           </div>
         </div>
-        <div className="upload-content bg-[#1d3c5a]/50 rounded-3xl w-287 h-135 relative top-37 left-10">
-          <label className="bg-[#2a5a8a] text-2xl text-white px-90 rounded-md py-2 relative top-7 left-33">
+        <div className="upload-content bg-[#1d3c5a]/50 rounded-2xl w-full min-h-[420px] p-4 md:p-8 mb-6">
+          <label className="block bg-[#2a5a8a] text-lg md:text-2xl text-white rounded-md py-3 px-4 text-center mb-8">
             ارفع الملف هنا
           </label>
           <input
@@ -84,10 +86,10 @@ function Upload() {
             id="fileInput"
             onChange={(e) => setFile(e.target.files[0])}
           />
-          <div className="button">    
+          <div className="button flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">    
             <label
               htmlFor="fileInput"
-              className="bg-[#2a5a8a] w-60 h-60 rounded-xl relative top-20 left-20 cursor-pointer flex items-center justify-center"
+              className="bg-[#2a5a8a] w-full max-w-64 aspect-square rounded-xl cursor-pointer flex items-center justify-center border border-[#3f78aa] hover:bg-[#3169a1] transition"
             >
               <p className="text-white text-2xl ">
                 أضغط هنا
@@ -96,31 +98,33 @@ function Upload() {
             <button
               onClick={handleUpload}
               disabled={uploading}
-              className="bg-[#14a577] w-50 h-15 rounded-xl relative top-37 left-25 text-white text-xl font-medium disabled:opacity-50"
+              className="bg-[#14a577] w-full md:w-52 h-14 rounded-xl text-white text-lg md:text-xl font-medium disabled:opacity-50 hover:bg-[#12986d] transition"
             >
               {uploading ? "جاري الرفع..." : "رفع الملف"}
             </button>
           </div>  
           {file && (
-            <div className="feilds">
-              <div className="bg-[#2a5a8a] w-150 h-16 rounded-lg relative bottom-50 left-130 flex">
+            <div className="feilds mt-8">
+              <div className="bg-[#2a5a8a] w-full rounded-lg p-4 flex flex-col sm:flex-row items-center gap-4">
                 <img
-                  className="w-13 h-13 relative left-135 top-2"
+                  className="w-12 h-12 shrink-0"
                   src="/Icons/encryptefile.png"
                   alt="photo"
                 />
-                <div className="main-progress bg-white w-110 h-6 rounded-xl relative left-2 top-8">
+                <div className="main-progress bg-white flex-1 h-4 md:h-6 rounded-xl overflow-hidden min-w-0">
                   <div
                     className="progressbar bg-sky-400 h-6 rounded-xl transition-all"
                     style={{ width: `${progress}%` }}
                   ></div>
                 </div>
-                <label className="text-white text-xl relative right-20">
+                <label className="text-white text-base md:text-xl max-w-full sm:max-w-64 truncate">
                   {file.name}
                 </label>
               </div>
             </div>
           )}
+        </div>
+          </div>
         </div>
       </div>
     </div>

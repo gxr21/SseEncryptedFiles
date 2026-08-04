@@ -29,29 +29,30 @@ function Table({ title, columns, data = [], subtitle }) {
   };
 
   return (
-    <div className="p-6 min-h-screen">
-      <div className="max-w-6xl mx-auto">
+    <div className="w-full">
+      <div className="w-full max-w-6xl mx-auto">
 
         {/* العنوان */}
-        <div className="mb-8 text-right">
-          <h2 className="text-3xl font-bold text-white mb-2">
+        <div className="mb-5 text-right">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
             {title}
           </h2>
-          <h3 className="text-1xl font-bold text-gray-300 mb-2">
+          <h3 className="text-sm md:text-base font-bold text-gray-300 mb-2">
             {subtitle}
           </h3>
         </div>
 
         {/* الجدول */}
-        <div className="bg-[#1d3c5a]/50 rounded-3xl p-6">
-          <table className="min-w-full h-100 text-right" dir="rtl">
+        <div className="bg-[#1d3c5a]/50 rounded-2xl p-3 md:p-6 overflow-hidden">
+          <div className="w-full overflow-x-auto">
+          <table className="min-w-[760px] w-full text-right" dir="rtl">
 
             {/* رأس الجدول */}
             <thead className="bg-[#2a5a8a] ">
               <tr>
                 <th className="py-4 px-6 text-white rounded text-2xl text-center">ت</th>
                 {columns.map(col => (
-                  <th key={col.key} className="py-4 px-6 text-white rounded text-2xl">
+                  <th key={col.key} className="py-3 px-4 text-white rounded text-base md:text-lg whitespace-nowrap">
                     {col.label}
                   </th>
                 ))}
@@ -64,13 +65,13 @@ function Table({ title, columns, data = [], subtitle }) {
               {currentRows.length > 0 ? (
                 currentRows.map((row, index) => (
                   <tr key={index}>
-                    <td className="py-4 px-6 text-center text-amber-50 text-lg ">
+                    <td className="py-4 px-4 text-center text-amber-50 text-sm md:text-base">
                       {/* معادلة لعرض الرقم التسلسلي الصحيح عبر الصفحات */}
                       {indexOfFirstRow + index + 1}
                     </td>
 
                     {columns.map(col => (
-                      <td key={col.key} className="py-4 px-6 text-amber-50 text-lg">
+                      <td key={col.key} className="py-4 px-4 text-amber-50 text-sm md:text-base whitespace-nowrap">
                         {col.render
                           ? col.render(row)
                           : row[col.key]}
@@ -87,9 +88,10 @@ function Table({ title, columns, data = [], subtitle }) {
               )}
             </tbody>
           </table>
+          </div>
 
           {/* تذييل الجدول (أزرار التنقل) */}
-          <div className="flex justify-between items-center mt-6 pt-6 border-t border-[#2a4d6e]">
+          <div className="flex flex-col sm:flex-row gap-4 justify-between items-center mt-6 pt-6 border-t border-[#2a4d6e]">
             
             <div className="text-gray-400 text-sm">
               {/* عرض ديناميكي للأرقام: عرض 1 إلى 5 من 20 */}

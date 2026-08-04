@@ -35,27 +35,27 @@ function Settings() {
   }, []);
 
   return (
-    <div className="settings bg-[#051C2D] min-h-screen">
+    <div className="settings bg-[#051C2D] min-h-screen overflow-x-hidden">
       {/* Header */}
-      <div className="header-section flex items-center justify-between p-6 border-b border-[#0a2a42]">
+      <div className="header-section flex items-center justify-between p-4 md:p-6 border-b border-[#0a2a42]">
         <Logo />
         {/* <div className="w-[400px]">
           <Searchbar />
         </div> */}
       </div>
 
-      <div className="main-content flex rounded-2xl">
+      <div className="main-content flex flex-col lg:flex-row rounded-2xl">
         {/* Sidebar */}
-        <div className="w-64 border-r border-[#0a2a42]">
+        <div className="w-full lg:w-64 lg:min-h-[calc(100vh-89px)] border-b lg:border-b-0 lg:border-r border-[#0a2a42]">
           <List activeId={6} />
         </div>
 
         {/* User Content */}
-        <div className="user-settings flex-1 p-6">
+        <div className="user-settings flex-1 p-4 md:p-6 min-w-0">
           <div className="max-w-4xl mx-auto">
             {/* العنوان */}
-            <div className="mb-10">
-              <h1 className="text-3xl font-bold text-white mb-2">
+            <div className="mb-8 text-right">
+              <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">
                 معلومات الحساب
               </h1>
               <p className="text-gray-400">

@@ -50,17 +50,17 @@ return (
                 <Navbar />
 
                 {/* HERO SECTION = FULL SCREEN */}
-                <section className="min-h-screen flex flex-col justify-center items-center p-4" id="hero-section">
+                <section className="min-h-screen flex flex-col justify-center items-center px-4 py-20" id="hero-section">
                     <h1 className="text-5xl text-white font-bold mb-6">مرحبا بك</h1>
-                    <p className="font-normal text-white text-2xl text-center p-4 leading-relaxed w-[70%]">
+                    <p className="font-normal text-white text-lg md:text-2xl text-center p-4 leading-relaxed w-full max-w-5xl">
                         نوفر لك طريقة آمنة وموثوقة لحماية ملفاتك من خلال تقنيات<br />
                         تشفير تضمن بقاء بياناتك سرية بالكامل قبل رفعها إلى السحابة الإلكترونية
                     </p>
                 </section>
                 {/* SECTION 2 */}
-                <section className="py-32 text-center" id="about-section">
+                <section className="py-20 md:py-32 px-4 text-center" id="about-section">
                     <h1 className="text-4xl text-white font-normal p-6">عن الموقع</h1>
-                    <p className="text-white text-2xl" dir="rtl">
+                    <p className="text-white text-lg md:text-2xl leading-relaxed max-w-5xl mx-auto" dir="rtl">
                         موقعنا هو منصة متخصصة لرفع وتخزين الملفات مع<br/>
                         تشفير كامل من جانب الخادم (Server-Side Encryption) <br/>
                         لضمان حماية البيانات بشكلٍ عالي المستوى.
@@ -69,10 +69,10 @@ return (
                 {/* === FeedBack === */}
                 <FeedBack/>
                 {/* SECTION 3 */}
-                <section className="py-32 text-center" id="recommendations-section">
+                <section className="py-20 md:py-32 px-4 text-center" id="recommendations-section">
                     <h1 className="text-4xl text-white font-normal p-6 relative bottom-10">التوصيات</h1>
-                    <div className="flex flex-col justify-center items-center space-y-20 gap-30" dir="rtl">
-                        <div className="flex justify-center items-center gap-20">
+                    <div className="flex flex-col justify-center items-center gap-12 md:gap-20" dir="rtl">
+                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 md:gap-14 w-full max-w-7xl">
                             <div className="flex flex-col justify-center items-center">
                                 <img src="Icons/hide.png" className="w-20 h-20 invert" />
                                 <h1 className="text-white text-2xl m-2">استخدم كلمة مرور قوية</h1>
