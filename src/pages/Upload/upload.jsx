@@ -103,18 +103,29 @@ function Upload() {
           {file && (
             <div className="feilds">
               <div className="bg-[#2a5a8a] w-150 h-16 rounded-lg relative bottom-50 left-130 flex">
+<<<<<<< HEAD
                 <img
                   className="w-13 h-13 relative left-135 top-2"
                   src="dist/Icons/file.png"
                   alt="photo"
                 />
                 <div className="main-progress bg-white w-110 h-6 rounded-xl relative left-2 top-8">
+=======
+                <img className="relative left-133" src="public\Icons\encryptefile.png" alt="photo" />
+
+                <div className="main-progress bg-white w-130 h-6 rounded-xl relative right-10 top-8">
+>>>>>>> 003cc5cde3503f8833d61da40806b7267587596f
                   <div
                     className="progressbar bg-sky-400 h-6 rounded-xl transition-all"
                     style={{ width: `${progress}%` }}
                   ></div>
                 </div>
+<<<<<<< HEAD
                 <label className="text-white text-xl relative right-20">
+=======
+
+                <label className="text-white text-xl relative right-9">
+>>>>>>> 003cc5cde3503f8833d61da40806b7267587596f
                   {file.name}
                 </label>
               </div>
